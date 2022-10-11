@@ -1,9 +1,9 @@
 
 --DECLARE @Id_Tipo_Aquicultura INT
---SET @IdTipo = 9
+--SET @Id_Tipo_Aquicultura = 9
 
 --DECLARE @Id_Municipio INT
---SET @IdMunicipio = 1100015
+--SET @Id_Municipio = 1100015
 
 --DECLARE @Ano INT
 --SET @Ano = 2013
@@ -25,7 +25,7 @@
 
 --PROCEDURE 
 CREATE PROCEDURE SP_EX07
-@IdTipo INT, @IdMunicipio INT, @Ano INT
+@Id_Tipo_Aquicultura INT, @Id_Municipio INT, @Ano INT
 AS
 BEGIN
 	SELECT Aquicultura.IdAquicultura, 
@@ -42,7 +42,6 @@ BEGIN
 END
 GO
 
---EXECUÇÃO
 EXEC SP_EX07 9, 1100015, 2013
 GO
 
