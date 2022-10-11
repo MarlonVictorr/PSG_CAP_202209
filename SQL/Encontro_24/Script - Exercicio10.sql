@@ -39,7 +39,7 @@ BEGIN
 
 	FROM Aquicultura 
 	INNER JOIN TipoAquicultura AS Tipo ON Aquicultura.IdTipoAquicultura = Tipo.IdTipoAquicultura
-	WHERE tipo.IdTipoAquicultura = @Id_Tipo_Aquicultura AND Id_Municipio = @Id_Municipio AND Aquicultura.Producao IS NOT NULL AND Aquicultura.ValorProducao IS NOT NULL
+	WHERE tipo.IdTipoAquicultura = @Id_Tipo_Aquicultura AND IdMunicipio = @Id_Municipio AND Aquicultura.Producao IS NOT NULL AND Aquicultura.ValorProducao IS NOT NULL
 END
 GO
 
