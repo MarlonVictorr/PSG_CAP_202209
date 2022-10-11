@@ -6,7 +6,7 @@
 --SET @Ano = 2013
 
 --SELECT * FROM VIEW VW_Aquicultura
---WHERE Id_Municipio = @Id_Municipio AND Ano = @Ano AND Producao IS NOT NULL
+--WHERE IdMunicipio = @Id_Municipio AND Ano = @Ano AND Producao IS NOT NULL
 --GO
 
 CREATE PROCEDURE SP_EX08
@@ -14,7 +14,7 @@ CREATE PROCEDURE SP_EX08
 AS
 BEGIN
 	SELECT * FROM VW_Aquicultura
-	WHERE Id_Municipio = @Id_Municipio AND Ano = @Ano AND Producao IS NOT NULL
+	WHERE IdMunicipio = @Id_Municipio AND Ano = @Ano AND Producao IS NOT NULL
 END
 GO
 
