@@ -23,7 +23,7 @@
 --WHERE tipo.IdTipoAquicultura = @Id_Tipo_Aquicultura AND Id_Municipio = @Id_Municipio AND Ano = @Ano
 --GO
 
---PROCEDURE 
+ 
 CREATE PROCEDURE SP_EX07
 @Id_Tipo_Aquicultura INT, @Id_Municipio INT, @Ano INT
 AS
