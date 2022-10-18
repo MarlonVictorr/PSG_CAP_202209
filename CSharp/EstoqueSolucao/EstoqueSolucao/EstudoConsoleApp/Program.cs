@@ -22,8 +22,17 @@ public class Program
         //Desafio007.Executar();
         //Desafio008.Executar();
         //Desafio009.Executar();
-        Desafio10.Executar();
-       
+        //Desafio10.Executar();
+        //Desafio011.Executar();
+        //Desafio12.Executar();
+        //Desafio13.Executar();
+        //Desafio14.Executar();
+        //Desafio15.Executar();
+        //Desafio16.Executar();
+        //Desafio17.Executar();
+        //Desafio18.Executar();
+        //Desafio19.Executar();
+
     }
 
     private static void ExecutarExemplo001()
