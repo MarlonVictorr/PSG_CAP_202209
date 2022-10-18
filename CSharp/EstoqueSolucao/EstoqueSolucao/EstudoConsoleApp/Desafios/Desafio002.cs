@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace EstudoConsoleApp.Desafios
 {
+    /// <summary>
+    /// Desafio 002 – Crie um programa que leia o dia, o mês e ano de nascimento de uma pessoa e
+    /// mostre uma mensagem com a data formatada.
+    /// </summary>
     public static class Desafio002
     {
         public static void Executar()

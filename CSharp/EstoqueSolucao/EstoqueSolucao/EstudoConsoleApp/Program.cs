@@ -15,7 +15,14 @@ public class Program
         //ExecutarExemplo005();
         //Desafio001.Executar();
         //Desafio002.Executar();
-        Desafio003.Executar();
+        //Desafio003.Executar();
+        //Desafio004.Executar();
+        //Desafio005.Executar();
+        //Desafio006.Executar();
+        //Desafio007.Executar();
+        //Desafio008.Executar();
+        //Desafio009.Executar();
+        Desafio10.Executar();
        
     }
 
