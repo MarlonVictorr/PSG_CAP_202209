@@ -10,11 +10,12 @@ namespace EstudoConsoleApp.Desafios
     {
         public static void Executar()
         {
+
             Console.Write("Digite seu Nome: ");
             string nome = Console.ReadLine();
 
             Console.WriteLine();
-            Console.WriteLine("Olá meu nome é: {0}",nome);
+            Console.WriteLine("Olá meu nome é: {0}", nome);
             Console.WriteLine();
             Console.WriteLine("Seu Nome Maiusculo é: {0}", nome.ToUpper());
             Console.WriteLine();

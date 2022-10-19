@@ -23,7 +23,7 @@ public class Program
         //Desafio008.Executar();
         //Desafio009.Executar();
         //Desafio10.Executar();
-        //Desafio011.Executar();
+        //Desafio11.Executar();
         //Desafio12.Executar();
         //Desafio13.Executar();
         //Desafio14.Executar();
@@ -32,7 +32,7 @@ public class Program
         //Desafio17.Executar();
         //Desafio18.Executar();
         //Desafio19.Executar();
-        //Desafio20.Executar();
+        Desafio20.Executar();
 
     }
 
