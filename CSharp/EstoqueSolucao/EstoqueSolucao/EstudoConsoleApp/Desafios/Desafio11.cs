@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EstudoConsoleApp.Desafios
 {
-    public static class Desafio011
+    public static class Desafio11
     {
         public static void Executar()
         {

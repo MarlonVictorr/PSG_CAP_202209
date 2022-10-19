@@ -10,17 +10,20 @@ namespace EstudoConsoleApp.Desafios
     {
         public static void Executar()
         {
-            double Numero;
+            int Numero;
             Console.WriteLine("Digite um numero ");
-            if (Double.TryParse(Console.ReadLine(), out Numero) == false)
+            if (Int32.TryParse(Console.ReadLine(), out Numero) == false)
             {
-                Console.WriteLine("Somente Números são aceitos.");
+                Console.WriteLine("Esse Campo só aceita Números");
+                return;
+            }
+            else if ((Numero % 2) == 0)
+            {
+                Console.WriteLine("Você informou um número par");
             }
             else
             {
-                Console.Write("Numero % 2 = 0");
-                Console.WriteLine();
-                Console.WriteLine("Seu Numero é par");
+                Console.WriteLine("Você informou um número ímpar");
             }
         }
     }
