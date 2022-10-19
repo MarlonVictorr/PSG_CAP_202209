@@ -8,5 +8,12 @@ namespace EstoqueApp.Model
 {
     public class Categoria : BaseEstoque
     {
+        public Categoria() : base()
+        { }
+
+        public Categoria(int codigo, string descricao, bool ativo, DateTime dataInclusao)
+            : base(codigo, descricao, ativo, dataInclusao)
+        {
+        }
     }
 }
