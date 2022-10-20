@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstoqueApp.Model
+namespace EstoqueApp.Model.Estoque
 {
     public abstract class BaseEstoque
     {
@@ -19,8 +19,7 @@ namespace EstoqueApp.Model
         public DateTime DataInclusao { get => this.dataInclusao; set => this.dataInclusao = value; }
 
         public BaseEstoque()
-        {
-        }
+        {}
 
         public BaseEstoque(int codigo, string descricao, bool ativo, DateTime dataInclusao)
         {
