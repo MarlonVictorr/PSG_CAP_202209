@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace EstoqueApp.Model.RH
 {
-    internal class Parceiro
+    public class Parceiro 
     {
+        private double desempenho;
+        private double comissao;
+        private string setor;
     }
 }
