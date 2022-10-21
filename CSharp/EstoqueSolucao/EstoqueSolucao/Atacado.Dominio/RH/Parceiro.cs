@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstoqueApp.Model.RH
+namespace Atacado.Dominio.RH
 {
     public class Parceiro : BaseJuridica
     {
@@ -17,8 +17,8 @@ namespace EstoqueApp.Model.RH
         public string Setor { get => setor; set => setor = value; }
 
         public Parceiro() : base()
-        {
-        }
+        { }
+        
 
         public Parceiro(int id, string nomeFantasia, string razaoSocial, string cnpj, string inscricaoEstadual, DateTime fundacao, string emailCorporativo, double desempenho, double comissao, string setor)
             : base(id, nomeFantasia, razaoSocial, cnpj, inscricaoEstadual, fundacao, emailCorporativo)

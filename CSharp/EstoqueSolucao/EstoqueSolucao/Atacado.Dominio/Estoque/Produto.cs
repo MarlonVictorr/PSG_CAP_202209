@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstoqueApp.Model.Estoque
+namespace Atacado.Dominio.Estoque
 {
     public class Produto : BaseEstoque
     {
@@ -12,7 +12,7 @@ namespace EstoqueApp.Model.Estoque
 
         public int CodigoSubcategoria { get => this.codigoSubcategoria; set => this.codigoSubcategoria = value; }
 
-        public Produto()
+        public Produto() : base()
         { }
 
         public Produto(int codigo, string descricao, bool ativo, DateTime dataInclusao, int codigoSubcategoria) : base(codigo, descricao, ativo, dataInclusao)
