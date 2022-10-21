@@ -13,11 +13,14 @@ namespace EstoqueApp.Model.RH
         private string permissao;
         private Colaborador colaborador;
 
-        
         public string Login { get => login; set => login = value; }
         public string Senha { get => senha; set => senha = value; }
         public string Permissao { get => permissao; set => permissao = value; }
         public Colaborador Colaborador { get => colaborador; set => colaborador = value; }
+
+        public Usuario()
+        {
+        }
 
         public Usuario(string login, string senha, string permissao)
         {
