@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atacado.Dominio.RH
 {
-    public  class Colaborador : BaseFisica
+    public class Colaborador : BaseFisica
     {
         private string ctps;
         private string pis;
