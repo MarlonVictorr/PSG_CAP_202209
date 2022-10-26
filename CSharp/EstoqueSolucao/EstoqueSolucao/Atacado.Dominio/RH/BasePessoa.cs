@@ -11,8 +11,8 @@ namespace Atacado.Dominio.RH
         protected int id;
         protected Endereco endereco;
 
-        protected int Id { get => id; set => id = value; }
-        protected Endereco Endereco { get => endereco; set => endereco = value; }
+        public int Id { get => id; set => id = value; }
+        public Endereco Endereco { get => endereco; set => endereco = value; }
 
         public BasePessoa()
         {
