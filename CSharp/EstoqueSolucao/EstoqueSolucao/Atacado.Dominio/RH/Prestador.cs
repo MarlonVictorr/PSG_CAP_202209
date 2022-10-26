@@ -13,8 +13,9 @@ namespace Atacado.Dominio.RH
 
         public DateOnly DataContratoInicial { get => dataContratoInicial; set => dataContratoInicial = value; }
         public DateOnly DataContratoFinal { get => dataContratoFinal; set => dataContratoFinal = value; }
+        
 
-        public Prestador()
+        public Prestador() : base()
         {
         }
 

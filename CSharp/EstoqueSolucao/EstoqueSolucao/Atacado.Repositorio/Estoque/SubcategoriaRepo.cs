@@ -13,7 +13,7 @@ namespace Atacado.Repositorio.Estoque
     {
         private EstoqueContexto contexto;
 
-        public SubcategoriaRepo() : base()
+        public SubcategoriaRepo() 
         {
             this.contexto = new EstoqueContexto();
         }
