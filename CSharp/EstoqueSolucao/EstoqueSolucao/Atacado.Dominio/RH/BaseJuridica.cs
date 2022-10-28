@@ -23,7 +23,7 @@ namespace Atacado.Dominio.RH
         public string EmailCorporativo { get => emailCorporativo; set => emailCorporativo = value; }
 
         public BaseJuridica() : base()
-        {}
+        { }
 
         public BaseJuridica(int id, string nomeFantasia, string razaoSocial, string cnpj, string inscricaoEstadual, DateTime fundacao, string emailCorporativo) 
             : base(id)

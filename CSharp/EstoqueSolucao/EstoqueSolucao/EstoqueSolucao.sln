@@ -23,7 +23,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.DB.FakeDB", "Atacad
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.Repositorio", "Atacado.Repositorio\Atacado.Repositorio.csproj", "{F57B2E34-DBF2-4CC4-90E3-89A1BFE1D40B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Atacado.Servico", "Atacado.Servico\Atacado.Servico.csproj", "{03966143-0593-4224-A009-049B04A663D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Atacado.Servico", "Atacado.Servico\Atacado.Servico.csproj", "{03966143-0593-4224-A009-049B04A663D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -35,8 +35,7 @@ namespace Atacado.Dominio.RH
         public string Telefone2 { get => telefone2; set => telefone2 = value; }
 
         public Colaborador() : base()
-        {
-        }
+        { }
 
         public Colaborador(int id, string rg, string nome, string cpf, string genero, DateTime nasc, string emailPessoal, string ctps, string pis, string tituloEleitor, bool reservista, string estadoCivil, int numDependentes, bool ativo, string setor, string cargo, double salario, string telefone1, string telefone2)
             : base(id, rg, nome, cpf, genero, nasc, emailPessoal)

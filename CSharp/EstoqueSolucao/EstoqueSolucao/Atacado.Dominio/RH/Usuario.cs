@@ -19,7 +19,7 @@ namespace Atacado.Dominio.RH
         public string Senha { get => senha; set => senha = value; }
         public string Permissao { get => permissao; set => permissao = value; }
         public Colaborador Colaborador { get => colaborador; set => colaborador = value; }
-
+    
         public Usuario()
         { }
         public Usuario(int id,string login, string senha, string permissao)
