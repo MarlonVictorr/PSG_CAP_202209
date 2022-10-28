@@ -1,11 +1,12 @@
-﻿using Atacado.DB.FakeDB.FrotaVeiculo;
-using Atacado.Repositorio.Base;
-using Base.Dominio.FrotaVeiculo;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Atacado.DB.FakeDB.FrotaVeiculo;
+using Atacado.Dominio.Estoque;
+using Atacado.Repositorio.Base;
+using Atacado.Dominio.FrotaVeiculo;
 
 namespace Atacado.Repositorio.FrotaVeiculo
 {
@@ -20,13 +21,13 @@ namespace Atacado.Repositorio.FrotaVeiculo
 
         public override EventoFrota Create(EventoFrota instancia)
         {
-            return this.contexto.AddEvento(instancia);
+            return this.contexto.AddEventoFrota(instancia);
         }
 
         public override EventoFrota Delete(int chave)
         {
             EventoFrota del = this.Read(chave);
-            if (this.contexto.Evento.Remove(del) == false)
+            if (this.contexto.Eventos.Remove(del) == false)
             {
                 return null;
             }
@@ -62,9 +63,11 @@ namespace Atacado.Repositorio.FrotaVeiculo
             {
                 atu.Ativo = instancia.Ativo;
                 atu.DataInclusao = instancia.DataInclusao;
+                atu.Condutor = instancia.Condutor;
                 atu.DataInicial = instancia.DataInicial;
                 atu.DataFinal = instancia.DataFinal;
                 atu.KmInicial = instancia.KmInicial;
+                atu.KmFinal = instancia.KmFinal;
                 atu.MotivoEvento = instancia.MotivoEvento;
                 return atu;
             }

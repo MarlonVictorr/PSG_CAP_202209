@@ -20,16 +20,7 @@ namespace Atacado.Poco.Base
         public string Modelo { get => modelo; set => modelo = value; }
         public string Placa { get => placa; set => placa = value; }
 
-        public BaseVeiculo(int codigo, bool ativo, DateTime dataInclusao, string chassi, string cor, string marca, string modelo, string placa)
-            : base(codigo, ativo, dataInclusao)
-        {
-            this.chassi = chassi;
-            this.cor = cor;
-            this.marca = marca;
-            this.modelo = modelo;
-            this.placa = placa;
-        }
-
-
+        public BaseVeiculo() : base()
+        { }
     }
 }

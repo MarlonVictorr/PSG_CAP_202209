@@ -17,12 +17,5 @@ namespace Atacado.Poco.Base
         public DateTime DataInclusao { get => dataInclusao; set => dataInclusao = value; }
         public BaseCampos()
         { }
-
-        public BaseCampos(int codigo, bool ativo, DateTime dataInclusao)
-        {
-            this.codigo = codigo;
-            this.ativo = ativo;
-            this.dataInclusao = dataInclusao;
-        }
     }
 }

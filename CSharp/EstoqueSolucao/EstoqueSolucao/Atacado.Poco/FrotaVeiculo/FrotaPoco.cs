@@ -17,14 +17,5 @@ namespace Atacado.Poco.FrotaVeiculo
 
         public FrotaPoco() : base()
         { }
-
-        public FrotaPoco(int codigo, bool ativo, DateTime dataInclusao, string finalidade, string veiculos)
-            : base(codigo, ativo, dataInclusao)
-        {
-            this.finalidade = finalidade;
-            this.veiculos = veiculos;
-        }
-
-
     }
 }

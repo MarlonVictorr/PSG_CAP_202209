@@ -27,19 +27,5 @@ namespace Atacado.Poco.FrotaVeiculo
        
         public EventoFrotaPoco() : base()
         { }
-
-        public EventoFrotaPoco(int codigo, bool ativo, DateTime dataInclusao, string condutor,
-            DateOnly dataInicial, DateOnly dataFinal, int kmInicial, int kmFinal, string motivoEvento,
-            int codigoFrota)
-            : base(codigo, ativo, dataInclusao)
-        {
-            this.condutor = condutor;
-            this.dataInicial = dataInicial;
-            this.dataFinal = dataFinal;
-            this.kmInicial = kmInicial;
-            this.kmFinal = kmFinal;
-            this.motivoEvento = motivoEvento;
-            this.codigoFrota = codigoFrota;
-        }
     }
 }

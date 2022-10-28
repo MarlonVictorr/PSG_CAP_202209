@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+
 using Atacado.DB.FakeDB.FrotaVeiculo;
 using Atacado.Dominio.Estoque;
 using Atacado.Repositorio.Base;
-using Base.Dominio.Veiculo;
+using Atacado.Dominio.FrotaVeiculo;
 
 namespace Atacado.Repositorio.FrotaVeiculo
 {

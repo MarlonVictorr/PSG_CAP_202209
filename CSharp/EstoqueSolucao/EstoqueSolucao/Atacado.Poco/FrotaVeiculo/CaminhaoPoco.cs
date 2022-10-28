@@ -9,9 +9,7 @@ namespace Atacado.Poco.FrotaVeiculo
 {
     public class CaminhaoPoco : BasePesoCarga
     {
-        public CaminhaoPoco(int codigo, bool ativo, DateTime dataInclusao, string chassi, string cor, 
-            string marca, string modelo, string placa, double pesobruto, double pesoLiquido, double pesoTotal) 
-            : base(codigo, ativo, dataInclusao, chassi, cor, marca, modelo, placa, pesobruto, pesoLiquido, pesoTotal)
+        public CaminhaoPoco() : base()
         { }
     }
 }

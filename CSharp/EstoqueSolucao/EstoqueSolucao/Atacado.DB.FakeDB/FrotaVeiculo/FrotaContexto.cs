@@ -1,4 +1,4 @@
-﻿using Base.Dominio.Veiculo;
+﻿using Atacado.Dominio.FrotaVeiculo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +9,16 @@ namespace Atacado.DB.FakeDB.FrotaVeiculo
 {
     public class FrotaContexto
     {
+        public List<Frota> Frotas
+        {
+            get => FrotaFakeDB.Frotas;
+        }
+
+        public List<EventoFrota> Eventos
+        {
+            get => EventoFrotaFakeDB.Eventos;
+        }
+
         public List<Caminhao> Caminhaos
         {
             get => CaminhaoFakeDB.Caminhaos;
@@ -25,8 +35,26 @@ namespace Atacado.DB.FakeDB.FrotaVeiculo
         {
             get => UtilitarioFakeDB.Utilitarios;
         }
+
         public FrotaContexto()
-        { }
+        {
+        }
+
+        public Frota AddFrota(Frota instancia)
+        {
+            int novaChave = this.Frotas.Count + 1;
+            instancia.Codigo = novaChave;
+            this.Frotas.Add(instancia);
+            return instancia;
+        }
+
+        public EventoFrota AddEventoFrota(EventoFrota instancia)
+        {
+            int novaChave = this.Eventos.Count + 1;
+            instancia.Codigo = novaChave;
+            this.Eventos.Add(instancia);
+            return instancia;
+        }
 
         public Caminhao AddCaminhao(Caminhao instancia)
         {

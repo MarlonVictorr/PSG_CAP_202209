@@ -1,13 +1,14 @@
-﻿using Base.Dominio.Base;
+﻿using Atacado.Dominio.Base;
+using Atacado.Dominio.FrotaVeiculo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Base.Dominio.FrotaVeiculo
+namespace Atacado.Dominio.FrotaVeiculo
 {
-    public class EventoFrota : BaseCampos
+    public class EventoFrota : BaseCampos 
     {
         private string condutor;
         private DateOnly dataInicial;

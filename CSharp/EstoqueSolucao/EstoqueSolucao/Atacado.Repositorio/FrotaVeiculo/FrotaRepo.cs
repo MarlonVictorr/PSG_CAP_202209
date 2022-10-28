@@ -1,12 +1,12 @@
-﻿using Atacado.DB.FakeDB.FrotaVeiculo;
-using Atacado.Repositorio.Base;
-using Base.Dominio.FrotaVeiculo;
-using Base.Dominio.Veiculo;
-using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Atacado.DB.FakeDB.FrotaVeiculo;
+using Atacado.Dominio.Estoque;
+using Atacado.Repositorio.Base;
+using Atacado.Dominio.FrotaVeiculo;
 
 namespace Atacado.Repositorio.FrotaVeiculo
 {
@@ -65,7 +65,6 @@ namespace Atacado.Repositorio.FrotaVeiculo
                 atu.DataInclusao = instancia.DataInclusao;
                 atu.Finalidade = instancia.Finalidade;
                 atu.Veiculos = instancia.Veiculos;
-                atu.Eventos = instancia.Eventos;
                 return atu;
             }
         }

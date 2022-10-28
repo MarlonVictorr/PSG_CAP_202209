@@ -1,5 +1,4 @@
-﻿using Base.Dominio.FrotaVeiculo;
-using Base.Dominio.Veiculo;
+﻿using Atacado.Dominio.FrotaVeiculo;
 using System;
 using System.Collections.Generic;
 using System.Linq;

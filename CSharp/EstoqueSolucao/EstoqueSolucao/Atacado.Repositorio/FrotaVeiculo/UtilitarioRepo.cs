@@ -1,6 +1,6 @@
 ﻿using Atacado.DB.FakeDB.FrotaVeiculo;
 using Atacado.Repositorio.Base;
-using Base.Dominio.Veiculo;
+using Atacado.Dominio.FrotaVeiculo;
 using System;
 using System.Collections.Generic;
 using System.Linq;

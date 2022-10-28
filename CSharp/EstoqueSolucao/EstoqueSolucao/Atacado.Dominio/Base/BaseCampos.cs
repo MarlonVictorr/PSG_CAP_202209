@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Atacado.Dominio.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Base.Dominio.Base
+namespace Atacado.Dominio.Base
 {
     public abstract class BaseCampos
     {

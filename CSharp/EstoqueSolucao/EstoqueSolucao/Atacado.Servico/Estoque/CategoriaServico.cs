@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,14 +30,27 @@ namespace Atacado.Servico.Estoque
 
         public override List<CategoriaPoco> Browse()
         {
-            List<Categoria> lista = this.repo.Read();
-            List<CategoriaPoco> listaPoco = new List<CategoriaPoco>();
-            foreach (Categoria item in lista)
-            {
-                CategoriaPoco poco = this.ConvertTo(item);
-                listaPoco.Add(poco);
-            }
-            return listaPoco;
+            //List<Categoria> lista = this.repo.Read();
+            //List<CategoriaPoco> listaPoco = new List<CategoriaPoco>();
+            //foreach (Categoria item in lista)
+            //{
+            //    CategoriaPoco poco = this.ConvertTo(item);
+            //    listaPoco.Add(poco);
+            //}
+            //return listaPoco;
+
+            List<CategoriaPoco> listapoco = this.repo.Read()
+                .Select (cat => 
+                new CategoriaPoco()
+                {
+                    Codigo = cat.Codigo,
+                    Descricao = cat.Descricao,
+                    Ativo = cat.Ativo,
+                    DataInclusao = cat.DataInclusao
+                }   
+            )
+            .ToList();
+            return listapoco;       
         }
 
         public override Categoria ConvertTo(CategoriaPoco poco)
@@ -63,7 +76,7 @@ namespace Atacado.Servico.Estoque
             Categoria del = this.repo.Delete(poco.Codigo);
             CategoriaPoco delPoco = this.ConvertTo(del);
             return delPoco;
-        }
+        }   
 
         public override CategoriaPoco Edit(CategoriaPoco poco)
         {
