@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Atacado.Poco.FrotaVeiculo
 {
-    public class EventoFrotaPoco : BaseCampos
+    public class EventoFrotaPoco : BaseCamposPoco
     {
         private string condutor;
         private DateOnly dataInicial;

@@ -20,7 +20,7 @@ namespace Atacado.Dominio.Base
         public BaseCampos()
         { }
 
-        protected BaseCampos(int codigo, bool ativo, DateTime dataInclusao)
+        public BaseCampos(int codigo, bool ativo, DateTime dataInclusao)
         {
             this.codigo = codigo;
             this.ativo = ativo;

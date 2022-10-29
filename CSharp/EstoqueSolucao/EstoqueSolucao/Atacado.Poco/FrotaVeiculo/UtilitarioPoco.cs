@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Atacado.Poco.FrotaVeiculo
 {
-    public class UtilitarioPoco : BasePesoCarga
+    public class UtilitarioPoco : BasePesoCargaPoco
     {
         public UtilitarioPoco() : base()
         { }

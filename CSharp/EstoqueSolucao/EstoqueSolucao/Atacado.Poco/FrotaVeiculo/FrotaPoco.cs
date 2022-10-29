@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Atacado.Poco.FrotaVeiculo
 {
-    public class FrotaPoco : BaseCampos
+    public class FrotaPoco : BaseCamposPoco
     {
         private string finalidade;
-        private string veiculos;
+        private int veiculos;
 
         public string Finalidade { get => finalidade; set => finalidade = value; }
-        public string Veiculos { get => veiculos; set => veiculos = value; }
+        public int Veiculos { get => veiculos; set => veiculos = value; }
 
         public FrotaPoco() : base()
         { }

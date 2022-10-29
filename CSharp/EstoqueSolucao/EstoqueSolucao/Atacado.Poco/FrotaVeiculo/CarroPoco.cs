@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Atacado.Poco.FrotaVeiculo
 {
-    public class CarroPoco : BasePesoCarga
+    public class CarroPoco : BasePesoCargaPoco
     {
         private int numPassageiros;
         public int NumPassageiros { get => numPassageiros; set => numPassageiros = value; }
 
-        public CarroPoco()
+        public CarroPoco() : base()
         { }
 
     }

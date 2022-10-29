@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atacado.Poco.Base
 {
-    public abstract class BasePesoCarga : BaseVeiculo
+    public abstract class BasePesoCargaPoco : BaseVeiculoPoco
     {
         protected double pesobruto;
         protected double pesoLiquido;
@@ -15,7 +15,7 @@ namespace Atacado.Poco.Base
         public double PesoLiquido { get => pesoLiquido; set => pesoLiquido = value; }
         public double Pesobruto { get => pesobruto; set => pesobruto = value; }
         public double PesoTotal { get => pesoTotal; set => pesoTotal = value; }
-        public BasePesoCarga() : base()
+        public BasePesoCargaPoco() : base()
         { }
     }
 }

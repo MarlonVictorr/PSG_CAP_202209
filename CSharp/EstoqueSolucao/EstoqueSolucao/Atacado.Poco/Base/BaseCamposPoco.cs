@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atacado.Poco.Base
 {
-    public abstract class BaseCampos
+    public abstract class BaseCamposPoco
     {
         protected int codigo;
         protected bool ativo;
@@ -15,7 +15,7 @@ namespace Atacado.Poco.Base
         public int Codigo { get => codigo; set => codigo = value; }
         public bool Ativo { get => ativo; set => ativo = value; }
         public DateTime DataInclusao { get => dataInclusao; set => dataInclusao = value; }
-        public BaseCampos()
+        public BaseCamposPoco()
         { }
     }
 }

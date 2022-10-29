@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Atacado.Poco.Base
 {
-    public abstract class BaseVeiculo : BaseCampos
+    public abstract class BaseVeiculoPoco : BaseCamposPoco
     {
         protected string chassi;
         protected string cor;
@@ -20,7 +20,7 @@ namespace Atacado.Poco.Base
         public string Modelo { get => modelo; set => modelo = value; }
         public string Placa { get => placa; set => placa = value; }
 
-        public BaseVeiculo() : base()
+        public BaseVeiculoPoco() : base()
         { }
     }
 }
