@@ -1,18 +1,18 @@
-﻿    using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using Atacado.Servico.Base;
-using Atacado.Dominio.Estoque;
 using Atacado.Poco.Estoque;
 using Atacado.Repositorio.Estoque;
 using Microsoft.VisualBasic;
+using Atacado.DB.EF.Database;
 
 namespace Atacado.Servico.Estoque
 {
-    public class CategoriaServico : BaseServico<CategoriaPoco, Categoria>
+    public class CategoriaServico : BaseServico<CategoriaPoco,Categoria>
     {
         private CategoriaRepo repo;
 
@@ -30,23 +30,13 @@ namespace Atacado.Servico.Estoque
 
         public override List<CategoriaPoco> Browse()
         {
-            //List<Categoria> lista = this.repo.Read();
-            //List<CategoriaPoco> listaPoco = new List<CategoriaPoco>();
-            //foreach (Categoria item in lista)
-            //{
-            //    CategoriaPoco poco = this.ConvertTo(item);
-            //    listaPoco.Add(poco);
-            //}
-            //return listaPoco;
-
             List<CategoriaPoco> listapoco = this.repo.Read()
                 .Select (cat => 
                 new CategoriaPoco()
                 {
                     Codigo = cat.Codigo,
                     Descricao = cat.Descricao,
-                    Ativo = cat.Ativo,
-                    DataInclusao = cat.DataInclusao
+                    DataInsert = cat.DataInsert
                 }   
             )
             .ToList();
@@ -55,12 +45,23 @@ namespace Atacado.Servico.Estoque
 
         public override Categoria ConvertTo(CategoriaPoco poco)
         {
-            return new Categoria(poco.Codigo,poco.Descricao,poco.Ativo,poco.DataInclusao);
+            return new Categoria()
+            {
+                Codigo = poco.Codigo,
+                Descricao = poco.Descricao,
+                DataInsert = poco.DataInsert
+            };
         }
+    
 
         public override CategoriaPoco ConvertTo(Categoria dominio)
         {
-            return new CategoriaPoco(dominio.Codigo, dominio.Descricao, dominio.Ativo, dominio.DataInclusao);
+            return new CategoriaPoco()
+            {
+                Codigo = dominio.Codigo,
+                Descricao = dominio.Descricao,
+                DataInsert = dominio.DataInsert
+            };
         }
 
         public override CategoriaPoco Delete(int chave)
@@ -72,7 +73,6 @@ namespace Atacado.Servico.Estoque
 
         public override CategoriaPoco Delete(CategoriaPoco poco)
         {
-            //Categoria del = this.repo.Delete(ConvertTo(poco));
             Categoria del = this.repo.Delete(poco.Codigo);
             CategoriaPoco delPoco = this.ConvertTo(del);
             return delPoco;

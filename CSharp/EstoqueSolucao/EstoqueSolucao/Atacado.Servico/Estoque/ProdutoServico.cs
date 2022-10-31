@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Atacado.Servico.Estoque
 {
-    public class ProdutoServico : BaseServico<ProdutoPoco,Produto>
+    public class ProdutoServico : BaseServico<ProdutoPoco,ProdutoPoco>
     {
         private ProdutoRepo repo;
 
@@ -21,8 +21,8 @@ namespace Atacado.Servico.Estoque
 
         public override ProdutoPoco Add(ProdutoPoco poco)
         {
-            Produto nova = this.ConvertTo(poco);
-            Produto criada = this.repo.Create(nova);
+            ProdutoPoco nova = this.ConvertTo(poco);
+            ProdutoPoco criada = this.repo.Create(nova);
             return this.ConvertTo(criada);
         }
 
@@ -43,7 +43,7 @@ namespace Atacado.Servico.Estoque
             return listaPoco;
         }
 
-        public override ProdutoPoco ConvertTo(Produto dominio)
+        public override ProdutoPoco ConvertTo(ProdutoPoco dominio)
         {
             return new ProdutoPoco()
             {
@@ -55,36 +55,36 @@ namespace Atacado.Servico.Estoque
             };
         }
 
-        public override Produto ConvertTo(ProdutoPoco poco)
+        public override ProdutoPoco ConvertTo(ProdutoPoco poco)
         {
             return new Produto(poco.Codigo, poco.Descricao, poco.Ativo, poco.DataInclusao, poco.CodigoSubcategoria);
         }
 
         public override ProdutoPoco Delete(int chave)
         {
-            Produto del = this.repo.Delete(chave);
+            ProdutoPoco del = this.repo.Delete(chave);
             ProdutoPoco delPoco = this.ConvertTo(del);
             return delPoco;
         }
 
         public override ProdutoPoco Delete(ProdutoPoco poco)
         {
-            Produto del = this.repo.Delete(poco.Codigo);
+            ProdutoPoco del = this.repo.Delete(poco.Codigo);
             ProdutoPoco delPoco = this.ConvertTo(del);
             return delPoco;
         }
 
         public override ProdutoPoco Edit(ProdutoPoco poco)
         {
-            Produto editada = this.ConvertTo(poco);
-            Produto alterada = this.repo.Update(editada);
+            ProdutoPoco editada = this.ConvertTo(poco);
+            ProdutoPoco alterada = this.repo.Update(editada);
             ProdutoPoco alteradaPoco = this.ConvertTo(alterada);
             return alteradaPoco;
         }
 
         public override ProdutoPoco Read(int chave)
         {
-            Produto lida = this.repo.Read(chave);
+            ProdutoPoco lida = this.repo.Read(chave);
             ProdutoPoco lidaPoco = this.ConvertTo(lida);
             return lidaPoco;
         }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Atacado.Servico.Estoque
 {
-    public class SubcategoriaServico : BaseServico<SubcategoriaPoco,Subcategoria>
+    public class SubcategoriaServico : BaseServico<SubcategoriaPoco,SubcategoriaPoco>
     {
         private SubcategoriaRepo repo;
 
@@ -21,8 +21,8 @@ namespace Atacado.Servico.Estoque
 
         public override SubcategoriaPoco Add(SubcategoriaPoco poco)
         {
-            Subcategoria nova = this.ConvertTo(poco);
-            Subcategoria criada = this.repo.Create(nova);
+            SubcategoriaPoco nova = this.ConvertTo(poco);
+            SubcategoriaPoco criada = this.repo.Create(nova);
             SubcategoriaPoco criadaPoco = this.ConvertTo(criada);
             return criadaPoco;
         }
@@ -43,7 +43,7 @@ namespace Atacado.Servico.Estoque
                 .ToList();
             return listaPoco;
         }
-        public override SubcategoriaPoco ConvertTo(Subcategoria dominio)
+        public override SubcategoriaPoco ConvertTo(SubcategoriaPoco dominio)
         {
             return new SubcategoriaPoco()
             {
@@ -55,36 +55,36 @@ namespace Atacado.Servico.Estoque
             };
         }
 
-        public override Subcategoria ConvertTo(SubcategoriaPoco poco)
+        public override SubcategoriaPoco ConvertTo(SubcategoriaPoco poco)
         {
             return new Subcategoria(poco.Codigo, poco.Descricao, poco.Ativo, poco.DataInclusao, poco.CodigoCategoria);
         }
 
         public override SubcategoriaPoco Delete(int chave)
         {
-            Subcategoria del = this.repo.Delete(chave);
+            SubcategoriaPoco del = this.repo.Delete(chave);
             SubcategoriaPoco delPoco = this.ConvertTo(del);
             return delPoco;
         }
 
         public override SubcategoriaPoco Delete(SubcategoriaPoco poco)
         {
-            Subcategoria del = this.repo.Delete(ConvertTo(poco));
+            SubcategoriaPoco del = this.repo.Delete(ConvertTo(poco));
             SubcategoriaPoco delPoco = this.ConvertTo(del);
             return delPoco;
         }
 
         public override SubcategoriaPoco Edit(SubcategoriaPoco poco)
         {
-            Subcategoria editada = this.ConvertTo(poco);
-            Subcategoria alterada = this.repo.Update(editada);
+            SubcategoriaPoco editada = this.ConvertTo(poco);
+            SubcategoriaPoco alterada = this.repo.Update(editada);
             SubcategoriaPoco alteradaPoco = this.ConvertTo(alterada);
             return alteradaPoco;
         }
 
         public override SubcategoriaPoco Read(int chave)
         {
-            Subcategoria lida = this.repo.Read(chave);
+            SubcategoriaPoco lida = this.repo.Read(chave);
             SubcategoriaPoco lidaPoco = this.ConvertTo(lida);
             return lidaPoco;
         }

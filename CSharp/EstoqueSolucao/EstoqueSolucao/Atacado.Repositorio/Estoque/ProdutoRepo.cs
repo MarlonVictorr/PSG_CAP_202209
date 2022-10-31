@@ -1,35 +1,36 @@
-﻿using Atacado.DB.FakeDB.Estoque;
-using Atacado.Dominio.Estoque;
-using Atacado.Repositorio.Base;
+﻿using Atacado.Repositorio.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Atacado.DB.EF.Database;
 
 namespace Atacado.Repositorio.Estoque
 {
     public class ProdutoRepo : BaseRepositorio<Produto>
     {
-        private EstoqueContexto contexto;
+        private ProjetoAcademiaContext contexto;
 
         public ProdutoRepo()
         {
-            this.contexto = new EstoqueContexto();
+            this.contexto = new ProjetoAcademiaContext();
         }
         public override Produto Create(Produto instancia)
         {
-            return this.contexto.AddProduto(instancia);
+            this.contexto.Produtos.Add(instancia);
+            return instancia;
         }
         public override Produto Delete(int chave)
         {
             Produto del = this.Read(chave);
-            if (this.contexto.Produtos.Remove(del) == false)
+            if (del == null)
             {
                 return null;
             }
             else
             {
+                this.contexto.Produtos.Remove(del);
                 return del;
             }
         }
@@ -39,7 +40,7 @@ namespace Atacado.Repositorio.Estoque
         }
         public override List<Produto> Read()
         {
-            return this.contexto.Produtos;
+            return this.contexto.Produtos.ToList();
         }
         public override Produto Read(int chave)
         {
@@ -54,8 +55,9 @@ namespace Atacado.Repositorio.Estoque
             }
             else
             {
+                next.CodigoCategoria = instancia.CodigoCategoria;
+                next.CodigoSubcategoria = instancia.CodigoSubcategoria;
                 next.Descricao = instancia.Descricao;
-                next.Ativo = instancia.Ativo;
                 return next;
             }
         }

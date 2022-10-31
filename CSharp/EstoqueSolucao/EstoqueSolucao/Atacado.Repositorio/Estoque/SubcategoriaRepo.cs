@@ -1,25 +1,26 @@
-﻿using Atacado.DB.FakeDB.Estoque;
-using Atacado.Dominio.Estoque;
-using Atacado.Repositorio.Base;
+﻿using Atacado.Repositorio.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Atacado.DB.EF.Database;
+
 
 namespace Atacado.Repositorio.Estoque
 {
     public class SubcategoriaRepo : BaseRepositorio<Subcategoria>
     {
-        private EstoqueContexto contexto;
+        private ProjetoAcademiaContext contexto;
 
         public SubcategoriaRepo() 
         {
-            this.contexto = new EstoqueContexto();
+            this.contexto = new ProjetoAcademiaContext();
         }
         public override Subcategoria Create(Subcategoria instancia)
         {
-            return this.contexto.AddSubcategoria(instancia);
+            this.contexto.Subcategorias.Add(instancia);
+            return instancia;
         }
         public override Subcategoria Read(int chave)
         {
@@ -28,17 +29,18 @@ namespace Atacado.Repositorio.Estoque
 
         public override List<Subcategoria> Read()
         {
-            return this.contexto.Subcategorias;
+            return this.contexto.Subcategorias.ToList();
         }
         public override Subcategoria Delete(int chave)
         {
             Subcategoria del = this.Read(chave);
-            if (this.contexto.Subcategorias.Remove(del) == false)
+            if (del == null)
             {
                 return null;
             }
             else
             {
+                this.contexto.Subcategorias.Remove(del);
                 return del;
             }
         }
@@ -55,8 +57,8 @@ namespace Atacado.Repositorio.Estoque
             }
             else
             {
+                up.CodigoCategoria = instancia.CodigoCategoria;
                 up.Descricao = instancia.Descricao;
-                up.Ativo = instancia.Ativo;
                 return up;
             }
         }
