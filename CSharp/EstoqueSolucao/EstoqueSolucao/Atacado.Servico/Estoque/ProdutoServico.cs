@@ -1,16 +1,17 @@
-﻿using Atacado.Dominio.Estoque;
-using Atacado.Poco.Estoque;
-using Atacado.Repositorio.Estoque;
-using Atacado.Servico.Base;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Atacado.Servico.Base;
+using Atacado.DB.EF.Database;
+using Atacado.Poco.Estoque;
+using Atacado.Repositorio.Estoque;
+
 namespace Atacado.Servico.Estoque
 {
-    public class ProdutoServico : BaseServico<ProdutoPoco,ProdutoPoco>
+    public class ProdutoServico : BaseServico<ProdutoPoco, Produto>
     {
         private ProdutoRepo repo;
 
@@ -21,8 +22,8 @@ namespace Atacado.Servico.Estoque
 
         public override ProdutoPoco Add(ProdutoPoco poco)
         {
-            ProdutoPoco nova = this.ConvertTo(poco);
-            ProdutoPoco criada = this.repo.Create(nova);
+            Produto nova = this.ConvertTo(poco);
+            Produto criada = this.repo.Create(nova);
             return this.ConvertTo(criada);
         }
 
@@ -33,58 +34,64 @@ namespace Atacado.Servico.Estoque
                     new ProdutoPoco()
                     {
                         Codigo = pro.Codigo,
+                        CodigoSubcategoria = pro.CodigoSubcategoria,
                         Descricao = pro.Descricao,
-                        Ativo = pro.Ativo,
-                        DataInclusao = pro.DataInclusao,
-                        CodigoSubcategoria = pro.CodigoSubcategoria
+                        DataInsert = pro.DataInsert
                     }
                 )
                 .ToList();
             return listaPoco;
         }
 
-        public override ProdutoPoco ConvertTo(ProdutoPoco dominio)
+        public override ProdutoPoco ConvertTo(Produto dominio)
         {
             return new ProdutoPoco()
             {
                 Codigo = dominio.Codigo,
+                CodigoCategoria = dominio.CodigoCategoria,
+                CodigoSubcategoria = dominio.CodigoSubcategoria,
                 Descricao = dominio.Descricao,
-                Ativo = dominio.Ativo,
-                DataInclusao = dominio.DataInclusao,
-                CodigoSubcategoria = dominio.CodigoSubcategoria
+                DataInsert = dominio.DataInsert
             };
         }
 
-        public override ProdutoPoco ConvertTo(ProdutoPoco poco)
+        public override Produto ConvertTo(ProdutoPoco poco)
         {
-            return new Produto(poco.Codigo, poco.Descricao, poco.Ativo, poco.DataInclusao, poco.CodigoSubcategoria);
+            return new Produto()
+            {
+                Codigo = poco.Codigo,
+                CodigoCategoria = poco.CodigoCategoria,
+                CodigoSubcategoria = poco.CodigoSubcategoria,
+                Descricao = poco.Descricao,
+                DataInsert = poco.DataInsert
+            };
         }
 
         public override ProdutoPoco Delete(int chave)
         {
-            ProdutoPoco del = this.repo.Delete(chave);
+            Produto del = this.repo.Delete(chave);
             ProdutoPoco delPoco = this.ConvertTo(del);
             return delPoco;
         }
 
         public override ProdutoPoco Delete(ProdutoPoco poco)
         {
-            ProdutoPoco del = this.repo.Delete(poco.Codigo);
+            Produto del = this.repo.Delete(poco.Codigo);
             ProdutoPoco delPoco = this.ConvertTo(del);
             return delPoco;
         }
 
         public override ProdutoPoco Edit(ProdutoPoco poco)
         {
-            ProdutoPoco editada = this.ConvertTo(poco);
-            ProdutoPoco alterada = this.repo.Update(editada);
+            Produto editada = this.ConvertTo(poco);
+            Produto alterada = this.repo.Update(editada);
             ProdutoPoco alteradaPoco = this.ConvertTo(alterada);
             return alteradaPoco;
         }
 
         public override ProdutoPoco Read(int chave)
         {
-            ProdutoPoco lida = this.repo.Read(chave);
+            Produto lida = this.repo.Read(chave);
             ProdutoPoco lidaPoco = this.ConvertTo(lida);
             return lidaPoco;
         }
