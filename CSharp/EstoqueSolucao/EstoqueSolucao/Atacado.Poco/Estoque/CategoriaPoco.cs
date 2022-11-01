@@ -14,5 +14,7 @@ namespace Atacado.Poco.Estoque
 
         public CategoriaPoco()
         { }
+
+        public bool? Ativo { get; set; }
     }
 }

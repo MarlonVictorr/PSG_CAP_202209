@@ -34,8 +34,10 @@ namespace Atacado.Servico.Estoque
                     new ProdutoPoco()
                     {
                         Codigo = pro.Codigo,
+                        CodigoCategoria = pro.CodigoCategoria,
                         CodigoSubcategoria = pro.CodigoSubcategoria,
                         Descricao = pro.Descricao,
+                        Ativo = pro.Ativo,
                         DataInsert = pro.DataInsert
                     }
                 )
@@ -48,9 +50,10 @@ namespace Atacado.Servico.Estoque
             return new ProdutoPoco()
             {
                 Codigo = dominio.Codigo,
-                CodigoCategoria = dominio.CodigoCategoria,
+                CodigoCategoria= dominio.CodigoCategoria,
                 CodigoSubcategoria = dominio.CodigoSubcategoria,
                 Descricao = dominio.Descricao,
+                Ativo = dominio.Ativo,
                 DataInsert = dominio.DataInsert
             };
         }
@@ -63,6 +66,7 @@ namespace Atacado.Servico.Estoque
                 CodigoCategoria = poco.CodigoCategoria,
                 CodigoSubcategoria = poco.CodigoSubcategoria,
                 Descricao = poco.Descricao,
+                Ativo = poco.Ativo,
                 DataInsert = poco.DataInsert
             };
         }
