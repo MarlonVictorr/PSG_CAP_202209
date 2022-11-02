@@ -20,6 +20,7 @@ namespace Atacado.Repositorio.Estoque
         public override Subcategoria Create(Subcategoria instancia)
         {
             this.contexto.Subcategorias.Add(instancia);
+            this.contexto.SaveChanges();
             return instancia;
         }
         public override Subcategoria Read(int chave)
@@ -41,6 +42,7 @@ namespace Atacado.Repositorio.Estoque
             else
             {
                 this.contexto.Subcategorias.Remove(del);
+                this.contexto.SaveChanges();
                 return del;
             }
         }
@@ -59,6 +61,8 @@ namespace Atacado.Repositorio.Estoque
             {
                 up.CodigoCategoria = instancia.CodigoCategoria;
                 up.Descricao = instancia.Descricao;
+                up.Ativo = instancia.Ativo;
+                this.contexto.SaveChanges();
                 return up;
             }
         }

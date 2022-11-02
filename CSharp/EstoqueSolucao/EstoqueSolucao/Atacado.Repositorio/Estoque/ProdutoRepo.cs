@@ -19,6 +19,7 @@ namespace Atacado.Repositorio.Estoque
         public override Produto Create(Produto instancia)
         {
             this.contexto.Produtos.Add(instancia);
+            this.contexto.SaveChanges();
             return instancia;
         }
         public override Produto Delete(int chave)
@@ -31,6 +32,7 @@ namespace Atacado.Repositorio.Estoque
             else
             {
                 this.contexto.Produtos.Remove(del);
+                this.contexto.SaveChanges();
                 return del;
             }
         }
@@ -58,6 +60,8 @@ namespace Atacado.Repositorio.Estoque
                 next.CodigoCategoria = instancia.CodigoCategoria;
                 next.CodigoSubcategoria = instancia.CodigoSubcategoria;
                 next.Descricao = instancia.Descricao;
+                next.Ativo = instancia.Ativo;
+                this.contexto.SaveChanges();
                 return next;
             }
         }
