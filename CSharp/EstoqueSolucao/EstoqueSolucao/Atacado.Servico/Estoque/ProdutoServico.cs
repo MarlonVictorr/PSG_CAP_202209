@@ -8,6 +8,7 @@ using Atacado.Servico.Base;
 using Atacado.DB.EF.Database;
 using Atacado.Poco.Estoque;
 using Atacado.Repositorio.Estoque;
+using System.Linq.Expressions;
 
 namespace Atacado.Servico.Estoque
 {
@@ -29,19 +30,33 @@ namespace Atacado.Servico.Estoque
 
         public override List<ProdutoPoco> Browse()
         {
-            List<ProdutoPoco> listaPoco = this.repo.Read()
-                .Select(pro =>
-                    new ProdutoPoco()
-                    {
-                        Codigo = pro.Codigo,
-                        CodigoCategoria = pro.CodigoCategoria,
-                        CodigoSubcategoria = pro.CodigoSubcategoria,
-                        Descricao = pro.Descricao,
-                        Ativo = pro.Ativo,
-                        DataInsert = pro.DataInsert
-                    }
-                )
-                .ToList();
+            return this.Browse(null); 
+        }
+
+        public override List<ProdutoPoco> Browse(Expression<Func<Produto, bool>> filtro = null)
+        {
+            List<ProdutoPoco> listaPoco;
+            IQueryable<Produto> query;
+            if(filtro == null)
+            {
+                query = this.repo.Read(null);
+            }
+            else
+            {
+                query = this.repo.Read(filtro);
+            }
+            listaPoco = query.Select(pro =>
+            new ProdutoPoco()
+            {
+                Codigo = pro.Codigo,
+                CodigoCategoria = pro.CodigoCategoria,
+                CodigoSubcategoria = pro.CodigoSubcategoria,
+                Descricao = pro.Descricao,
+                Ativo = pro.Ativo,
+                DataInsert = pro.DataInsert
+            }
+            )
+            .ToList();
             return listaPoco;
         }
 

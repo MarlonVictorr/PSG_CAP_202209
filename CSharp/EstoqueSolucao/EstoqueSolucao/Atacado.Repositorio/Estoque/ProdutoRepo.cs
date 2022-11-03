@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Atacado.DB.EF.Database;
+using System.Linq.Expressions;
 
 namespace Atacado.Repositorio.Estoque
 {
@@ -43,6 +44,18 @@ namespace Atacado.Repositorio.Estoque
         public override List<Produto> Read()
         {
             return this.contexto.Produtos.ToList();
+        }
+
+        public override IQueryable<Produto> Read(Expression<Func<Produto, bool>> predicate = null)
+        {
+            if (predicate == null)
+            {
+                return this.contexto.Produtos.AsQueryable();
+            }
+            else
+            {
+                return this.contexto.Produtos.Where(predicate).AsQueryable();
+            }
         }
         public override Produto Read(int chave)
         {
