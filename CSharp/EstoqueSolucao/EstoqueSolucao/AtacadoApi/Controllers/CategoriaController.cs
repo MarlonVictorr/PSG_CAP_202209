@@ -29,9 +29,17 @@ namespace AtacadoApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public List<CategoriaPoco> GetAll()
+        public ActionResult<List<CategoriaPoco>> GetAll()
         {
-            return this.servico.Browse();
+            try
+            {
+                List<CategoriaPoco> list = this.servico.Browse();
+                return Ok(list);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -40,9 +48,17 @@ namespace AtacadoApi.Controllers
         /// <param name="codigo"></param>
         /// <returns></returns>
         [HttpGet("{codigo:int}")]
-        public CategoriaPoco GetPorId(int codigo)
+        public ActionResult<CategoriaPoco> GetPorId(int codigo)
         {
-            return this.servico.Read(codigo);
+            try
+            {
+                CategoriaPoco poco = this.servico.Read(codigo);
+                return Ok(poco);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -51,9 +67,17 @@ namespace AtacadoApi.Controllers
         /// <param name="poco"></param>
         /// <returns></returns>
         [HttpPost]
-        public CategoriaPoco Criar([FromBody] CategoriaPoco poco)
+        public ActionResult<CategoriaPoco> Criar([FromBody] CategoriaPoco poco)
         {
-            return this.servico.Add(poco);
+            try
+            {
+                CategoriaPoco nova = this.servico.Add(poco);
+                return Ok(poco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -73,9 +97,10 @@ namespace AtacadoApi.Controllers
         /// <param name="codigo"></param>
         /// <returns></returns>
         [HttpDelete("{codigo:int}")]
-        public CategoriaPoco DeletePorId(int codigo)
+        public ActionResult<CategoriaPoco> DeletePorId(int codigo)
         {
-           return this.servico.Delete(codigo);
+            CategoriaPoco delPoco = this.servico.Delete(codigo);
+            return Ok(delPoco);
         }
 
         /// <summary>

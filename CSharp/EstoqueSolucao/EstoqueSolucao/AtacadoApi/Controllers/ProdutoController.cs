@@ -114,7 +114,7 @@ namespace AtacadoApi.Controllers
         }
 
         /// <summary>
-        /// Apaga um registro de acordo com os dados informados 
+        /// Apaga um registro de acordo com os dados informados
         /// </summary>
         /// <param name="poco"></param>
         /// <returns></returns>
