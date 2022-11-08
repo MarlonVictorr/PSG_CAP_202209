@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Atacado.Poco.Estoque;
 using Atacado.Servico.Estoque;
 using Microsoft.IdentityModel.Tokens;
+using System.Diagnostics.CodeAnalysis;
 
 namespace AtacadoApi.Controllers
 {
@@ -36,7 +37,7 @@ namespace AtacadoApi.Controllers
                 List<CategoriaPoco> list = this.servico.Browse();
                 return Ok(list);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
@@ -55,7 +56,7 @@ namespace AtacadoApi.Controllers
                 CategoriaPoco poco = this.servico.Read(codigo);
                 return Ok(poco);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
@@ -86,9 +87,18 @@ namespace AtacadoApi.Controllers
         /// <param name="poco"></param>
         /// <returns></returns>
         [HttpPut]
-        public CategoriaPoco Atualizar([FromBody] CategoriaPoco poco)
+        public ActionResult<CategoriaPoco> Atualizar([FromBody] CategoriaPoco poco)
         {
-            return this.servico.Edit(poco);
+            try
+            {
+                CategoriaPoco atPoco = this.servico.Edit(poco);
+                return Ok(atPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+            
         }
 
         /// <summary>
@@ -99,8 +109,16 @@ namespace AtacadoApi.Controllers
         [HttpDelete("{codigo:int}")]
         public ActionResult<CategoriaPoco> DeletePorId(int codigo)
         {
-            CategoriaPoco delPoco = this.servico.Delete(codigo);
-            return Ok(delPoco);
+            try
+            {
+                CategoriaPoco delPoco = this.servico.Delete(codigo);
+                return Ok(delPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+            
         }
 
         /// <summary>
@@ -109,9 +127,18 @@ namespace AtacadoApi.Controllers
         /// <param name="poco"></param>
         /// <returns></returns>
         [HttpDelete]
-        public CategoriaPoco DeletePorInstancia([FromBody] CategoriaPoco poco)
+        public ActionResult<CategoriaPoco> DeletePorInstancia([FromBody] CategoriaPoco poco)
         {
-            return this.servico.Delete(poco);
+            try
+            {
+                CategoriaPoco delPoco = this.servico.Delete(poco);
+                return Ok(delPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
+           
     }
 }
