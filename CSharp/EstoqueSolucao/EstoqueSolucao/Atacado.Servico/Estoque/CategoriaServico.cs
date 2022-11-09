@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 using Atacado.Servico.Base;
 using Atacado.Poco.Estoque;
-using Atacado.Repositorio.Estoque;
 using Atacado.Repositorio.Base;
 using Microsoft.VisualBasic;
 using Atacado.DB.EF.Database;
