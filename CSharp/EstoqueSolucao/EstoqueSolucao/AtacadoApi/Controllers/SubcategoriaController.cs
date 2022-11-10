@@ -1,5 +1,4 @@
 ﻿using Atacado.Poco.Estoque;
-using Atacado.Repositorio.Estoque;
 using Atacado.Servico.Estoque;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -28,9 +27,17 @@ namespace AtacadoApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public List<SubcategoriaPoco> GetAll()
+        public ActionResult<List<SubcategoriaPoco>> GetAll()
         {
-            return this.servico.Browse();
+            try
+            {
+                List<SubcategoriaPoco> list = this.servico.Listar();
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -39,9 +46,17 @@ namespace AtacadoApi.Controllers
         /// <param name="catid"></param>
         /// <returns></returns>
         [HttpGet("PorCategoria/{catid:int}")]
-        public List<SubcategoriaPoco> GetPorCategoria(int catid)
+        public ActionResult<List<SubcategoriaPoco>> GetPorCategoria(int catid)
         {
-            return this.servico.Browse(sub => sub.CodigoCategoria == catid).ToList();
+            try
+            {
+                List<SubcategoriaPoco> ListPoco = this.servico.Consultar(sub => sub.CodigoCategoria == catid).ToList();
+                return Ok(ListPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -50,9 +65,17 @@ namespace AtacadoApi.Controllers
         /// <param name="codigo"></param>
         /// <returns></returns>
         [HttpGet("{codigo:int}")]
-        public SubcategoriaPoco GetPorId(int codigo)
+        public ActionResult<SubcategoriaPoco> GetPorId(int codigo)
         {
-            return this.servico.Read(codigo);
+            try
+            {
+                SubcategoriaPoco poco = this.servico.PesquisarPelaChave(codigo);
+                return Ok(poco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -61,9 +84,17 @@ namespace AtacadoApi.Controllers
         /// <param name="poco"></param>
         /// <returns></returns>
         [HttpPost]
-        public SubcategoriaPoco Criar([FromBody] SubcategoriaPoco poco)
+        public ActionResult<SubcategoriaPoco> Criar([FromBody] SubcategoriaPoco poco)
         {
-            return this.servico.Add(poco);
+            try
+            {
+                SubcategoriaPoco nova = this.servico.Inserir(poco);
+                return Ok(poco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -72,9 +103,17 @@ namespace AtacadoApi.Controllers
         /// <param name="poco"></param>
         /// <returns></returns>
         [HttpPut]
-        public SubcategoriaPoco Atualizar([FromBody] SubcategoriaPoco poco)
+        public ActionResult<SubcategoriaPoco> Atualizar([FromBody] SubcategoriaPoco poco)
         {
-            return this.servico.Edit(poco);
+            try
+            {
+                SubcategoriaPoco atPoco = this.servico.Alterar(poco);
+                return Ok(atPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -83,9 +122,17 @@ namespace AtacadoApi.Controllers
         /// <param name="codigo"></param>
         /// <returns></returns>
         [HttpDelete("{codigo:int}")]
-        public SubcategoriaPoco DeletePorId(int codigo)
+        public ActionResult<SubcategoriaPoco> DeletePorId(int codigo)
         {
-            return this.servico.Delete(codigo); 
+            try
+            {
+                SubcategoriaPoco delPoco = this.servico.Excluir(codigo);
+                return Ok(delPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -94,9 +141,17 @@ namespace AtacadoApi.Controllers
         /// <param name="poco"></param>
         /// <returns></returns>
         [HttpDelete]
-        public SubcategoriaPoco DeletePorInstancia([FromBody] SubcategoriaPoco poco)
+        public ActionResult<SubcategoriaPoco> DeletePorInstancia([FromBody] SubcategoriaPoco poco)
         {
-            return this.servico.Delete(poco);
+            try
+            {
+                SubcategoriaPoco delPoco = this.servico.Excluir(poco.Codigo);
+                return Ok(delPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
     }
 }

@@ -28,9 +28,17 @@ namespace AtacadoApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public List<ProdutoPoco> GetAll()
+        public ActionResult<List<ProdutoPoco>> GetAll()
         {
-            return this.servico.Browse();
+            try
+            {
+                List<ProdutoPoco> list = this.servico.Listar();
+                return Ok(list);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -39,9 +47,17 @@ namespace AtacadoApi.Controllers
         /// <param name="codigo"></param>
         /// <returns></returns>
         [HttpGet("{codigo:int}")]
-        public ProdutoPoco GetPorId(int codigo)
+        public ActionResult<ProdutoPoco> GetPorId(int codigo)
         {
-            return this.servico.Read(codigo);
+            try
+            {
+                ProdutoPoco poco = this.servico.PesquisarPelaChave(codigo);
+                return Ok(poco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -50,9 +66,17 @@ namespace AtacadoApi.Controllers
         /// <param name="catid"></param>
         /// <returns></returns>
         [HttpGet("PorCategoria/{catid:int}")]
-        public List<ProdutoPoco> GetPorCategoriaId(int catid)
+        public ActionResult<List<ProdutoPoco>> GetPorCategoriaId(int catid)
         {
-            return this.servico.Browse(prd => prd.CodigoCategoria == catid).ToList();
+            try
+            {
+                List<ProdutoPoco> ListPoco = this.servico.Consultar(pro => pro.CodigoCategoria == catid).ToList();
+                return Ok(ListPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -61,9 +85,17 @@ namespace AtacadoApi.Controllers
         /// <param name="subid"></param>
         /// <returns></returns>
         [HttpGet("PorSubcategoria/{subid:int}")]
-        public List<ProdutoPoco> GetPorSubcategoriaId(int subid)
+        public ActionResult<List<ProdutoPoco>> GetPorSubcategoriaId(int subid)
         {
-            return this.servico.Browse(prd => prd.CodigoSubcategoria == subid).ToList();
+            try
+            {
+                List<ProdutoPoco> ListPoco = this.servico.Consultar(pro => pro.CodigoSubcategoria == subid).ToList();
+                return Ok(ListPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -73,11 +105,17 @@ namespace AtacadoApi.Controllers
         /// <param name="subid"></param>
         /// <returns></returns>
         [HttpGet("PorCategoria/{catid:int}/PorSubcategoria/{subid:int}")]
-        public List<ProdutoPoco> GetPorCategoriaPorSubcategoria(int catid, int subid)
+        public ActionResult<List<ProdutoPoco>> GetPorCategoriaPorSubcategoria(int catid, int subid)
         {
-            return this.servico.Browse
-                (prd => (prd.CodigoCategoria == catid) && (prd.CodigoSubcategoria == subid))
-                .ToList();
+            try
+            {
+                List<ProdutoPoco> ListPoco = this.servico.Consultar(pro => (pro.CodigoCategoria == catid) && (pro.CodigoSubcategoria == subid)).ToList();
+                return Ok(ListPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -86,9 +124,17 @@ namespace AtacadoApi.Controllers
         /// <param name="poco"></param>
         /// <returns></returns>
         [HttpPost]
-        public ProdutoPoco Criar([FromBody] ProdutoPoco poco)
+        public ActionResult<ProdutoPoco> Criar([FromBody] ProdutoPoco poco)
         {
-            return this.servico.Add(poco);
+            try
+            {
+                ProdutoPoco nova = this.servico.Inserir(poco);
+                return Ok(poco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -97,9 +143,17 @@ namespace AtacadoApi.Controllers
         /// <param name="poco"></param>
         /// <returns></returns>
         [HttpPut]
-        public ProdutoPoco Atualizar([FromBody] ProdutoPoco poco)
+        public ActionResult<ProdutoPoco> Atualizar([FromBody] ProdutoPoco poco)
         {
-            return this.servico.Edit(poco);
+            try
+            {
+                ProdutoPoco atPoco = this.servico.Alterar(poco);
+                return Ok(atPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -108,9 +162,17 @@ namespace AtacadoApi.Controllers
         /// <param name="codigo"></param>
         /// <returns></returns>
         [HttpDelete("{codigo:int}")]
-        public ProdutoPoco DeletePorId(int codigo)
+        public ActionResult<ProdutoPoco> DeletePorId(int codigo)
         {
-            return this.servico.Delete(codigo);
+            try
+            {
+                ProdutoPoco delPoco = this.servico.Excluir(codigo);
+                return Ok(delPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         /// <summary>
@@ -119,9 +181,17 @@ namespace AtacadoApi.Controllers
         /// <param name="poco"></param>
         /// <returns></returns>
         [HttpDelete]
-        public ProdutoPoco DeletePorInstancia([FromBody] ProdutoPoco poco)
+        public ActionResult<ProdutoPoco> DeletePorInstancia([FromBody] ProdutoPoco poco)
         {
-            return this.servico.Delete(poco);
+            try
+            {
+                ProdutoPoco delPoco = this.servico.Excluir(poco.Codigo);
+                return Ok(delPoco);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
     }
 }

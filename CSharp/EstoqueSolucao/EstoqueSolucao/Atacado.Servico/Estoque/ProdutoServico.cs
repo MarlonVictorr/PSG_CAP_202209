@@ -12,106 +12,58 @@ using Atacado.Repositorio.Base;
 
 namespace Atacado.Servico.Estoque
 {
-    public class ProdutoServico : BaseServico<ProdutoPoco, Produto>
+    public class ProdutoServico : GenericService<Produto, ProdutoPoco>
     {
-        private GenericRepository<Produto> genrepo;
-        public ProdutoServico()
+        public override ProdutoPoco ConverterPara(Produto obj)
         {
-            this.genrepo = new GenericRepository<Produto>();
+            return new ProdutoPoco()
+            {
+                Codigo = obj.Codigo,
+                CodigoCategoria = obj.CodigoCategoria,
+                CodigoSubcategoria = obj.CodigoSubcategoria,
+                Descricao = obj.Descricao,
+                Ativo = obj.Ativo,
+                DataInsert = obj.DataInsert
+            };
         }
 
-        public override ProdutoPoco Add(ProdutoPoco poco)
+        public override Produto ConverterPara(ProdutoPoco obj)
         {
-            Produto nova = this.ConvertTo(poco);
-            Produto criada = this.genrepo.Insert(nova);
-            return this.ConvertTo(criada);
+            return new Produto()
+            {
+                Codigo = obj.Codigo,
+                CodigoCategoria = obj.CodigoCategoria,
+                CodigoSubcategoria = obj.CodigoSubcategoria,
+                Descricao = obj.Descricao,
+                Ativo = obj.Ativo,
+                DataInsert = obj.DataInsert
+            };
         }
 
-        public override List<ProdutoPoco> Browse()
+        public override List<ProdutoPoco> Consultar(Expression<Func<Produto, bool>> predicate = null)
         {
-            return this.Browse(null); 
-        }
-
-        public override List<ProdutoPoco> Browse(Expression<Func<Produto, bool>> filtro = null)
-        {
-            List<ProdutoPoco> listaPoco;
             IQueryable<Produto> query;
-            if(filtro == null)
+            if (predicate == null)
             {
                 query = this.genrepo.Browseable(null);
             }
             else
             {
-                query = this.genrepo.Browseable(filtro);
+                query = this.genrepo.Browseable(predicate);
             }
-            listaPoco = query.Select(pro =>
-            new ProdutoPoco()
-            {
-                Codigo = pro.Codigo,
-                CodigoCategoria = pro.CodigoCategoria,
-                CodigoSubcategoria = pro.CodigoSubcategoria,
-                Descricao = pro.Descricao,
-                Ativo = pro.Ativo,
-                DataInsert = pro.DataInsert
-            }
-            )
-            .ToList();
+            List<ProdutoPoco> listaPoco = query.Select(pro =>
+                new ProdutoPoco()
+                    {
+                       Codigo = pro.Codigo,
+                       CodigoCategoria = pro.CodigoCategoria,
+                       CodigoSubcategoria = pro.CodigoSubcategoria,
+                       Descricao = pro.Descricao,
+                       Ativo = pro.Ativo,
+                       DataInsert = pro.DataInsert
+                    }
+                )
+                .ToList();
             return listaPoco;
-        }
-
-        public override ProdutoPoco ConvertTo(Produto dominio)
-        {
-            return new ProdutoPoco()
-            {
-                Codigo = dominio.Codigo,
-                CodigoCategoria= dominio.CodigoCategoria,
-                CodigoSubcategoria = dominio.CodigoSubcategoria,
-                Descricao = dominio.Descricao,
-                Ativo = dominio.Ativo,
-                DataInsert = dominio.DataInsert
-            };
-        }
-
-        public override Produto ConvertTo(ProdutoPoco poco)
-        {
-            return new Produto()
-            {
-                Codigo = poco.Codigo,
-                CodigoCategoria = poco.CodigoCategoria,
-                CodigoSubcategoria = poco.CodigoSubcategoria,
-                Descricao = poco.Descricao,
-                Ativo = poco.Ativo,
-                DataInsert = poco.DataInsert
-            };
-        }
-
-        public override ProdutoPoco Delete(int chave)
-        {
-            Produto del = this.genrepo.Delete(chave);
-            ProdutoPoco delPoco = this.ConvertTo(del);
-            return delPoco;
-        }
-
-        public override ProdutoPoco Delete(ProdutoPoco poco)
-        {
-            Produto del = this.genrepo.Delete(poco.Codigo);
-            ProdutoPoco delPoco = this.ConvertTo(del);
-            return delPoco;
-        }
-
-        public override ProdutoPoco Edit(ProdutoPoco poco)
-        {
-            Produto editada = this.ConvertTo(poco);
-            Produto alterada = this.genrepo.Update(editada);
-            ProdutoPoco alteradaPoco = this.ConvertTo(alterada);
-            return alteradaPoco;
-        }
-
-        public override ProdutoPoco Read(int chave)
-        {
-            Produto lida = this.genrepo.GetById(chave);
-            ProdutoPoco lidaPoco = this.ConvertTo(lida);
-            return lidaPoco;
         }
     }
 }
