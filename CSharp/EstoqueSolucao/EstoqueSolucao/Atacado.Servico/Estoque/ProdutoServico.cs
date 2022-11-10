@@ -14,19 +14,33 @@ namespace Atacado.Servico.Estoque
 {
     public class ProdutoServico : GenericService<Produto, ProdutoPoco>
     {
-        public override ProdutoPoco ConverterPara(Produto obj)
+        public override List<ProdutoPoco> Listar(int? take, int? skip = null)
         {
-            return new ProdutoPoco()
+            IQueryable<Produto> query;
+            if (skip == null)
             {
-                Codigo = obj.Codigo,
-                CodigoCategoria = obj.CodigoCategoria,
-                CodigoSubcategoria = obj.CodigoSubcategoria,
-                Descricao = obj.Descricao,
-                Ativo = obj.Ativo,
-                DataInsert = obj.DataInsert
-            };
+                query = this.genrepo.GetAll();
+            }
+            else
+            {
+                query = this.genrepo.GetAll(take, skip);
+            }
+            return this.ConverterPara(query);
         }
 
+        public override List<ProdutoPoco> Consultar(Expression<Func<Produto, bool>>? predicate = null)
+        {
+            IQueryable<Produto> query;
+            if (predicate == null)
+            {
+                query = this.genrepo.Browseable(null);
+            }
+            else
+            {
+                query = this.genrepo.Browseable(predicate);
+            }
+            return this.ConverterPara(query);
+        }
         public override Produto ConverterPara(ProdutoPoco obj)
         {
             return new Produto()
@@ -40,30 +54,33 @@ namespace Atacado.Servico.Estoque
             };
         }
 
-        public override List<ProdutoPoco> Consultar(Expression<Func<Produto, bool>> predicate = null)
+        public override ProdutoPoco ConverterPara(Produto obj)
         {
-            IQueryable<Produto> query;
-            if (predicate == null)
+            return new ProdutoPoco()
             {
-                query = this.genrepo.Browseable(null);
-            }
-            else
-            {
-                query = this.genrepo.Browseable(predicate);
-            }
-            List<ProdutoPoco> listaPoco = query.Select(pro =>
+                Codigo = obj.Codigo,
+                CodigoCategoria = obj.CodigoCategoria,
+                CodigoSubcategoria = obj.CodigoSubcategoria,
+                Descricao = obj.Descricao,
+                Ativo = obj.Ativo,
+                DataInsert = obj.DataInsert
+            };
+        }
+
+        public override List<ProdutoPoco> ConverterPara(IQueryable<Produto> query)
+        {
+            return query.Select(pro =>
                 new ProdutoPoco()
-                    {
-                       Codigo = pro.Codigo,
-                       CodigoCategoria = pro.CodigoCategoria,
-                       CodigoSubcategoria = pro.CodigoSubcategoria,
-                       Descricao = pro.Descricao,
-                       Ativo = pro.Ativo,
-                       DataInsert = pro.DataInsert
-                    }
+                {
+                    Codigo = pro.Codigo,
+                    CodigoCategoria = pro.CodigoCategoria,
+                    CodigoSubcategoria = pro.CodigoSubcategoria,
+                    Descricao = pro.Descricao,
+                    Ativo = pro.Ativo,
+                    DataInsert = pro.DataInsert
+                }
                 )
                 .ToList();
-            return listaPoco;
         }
     }
 }
