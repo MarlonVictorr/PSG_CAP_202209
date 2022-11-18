@@ -6,18 +6,27 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AtacadoApi.Controllers
 {
-    [Route("api/[controller]")]
+    /// <summary>
+    /// 
+    /// </summary>
+    [Route("api/pecuaria[controller]")]
     [ApiController]
     public class TipoRebanhoController : ControllerBase
     {
         private TipoRebanhoServico servico;
 
+        /// <summary>
+        /// 
+        /// </summary>
         public TipoRebanhoController() : base()
         {
             this.servico = new TipoRebanhoServico();
         }
 
-        
+        /// <summary>
+        /// Listar todos os registros da tabela.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult<List<TipoRebanhoPoco>> GetAll()
         {
@@ -32,6 +41,11 @@ namespace AtacadoApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Lista o Tipo Rebanho pelo código
+        /// </summary>
+        /// <param name="codigo"></param>
+        /// <returns></returns>
         [HttpGet("{codigo:int}")]
         public ActionResult<TipoRebanhoPoco> GetPorId(int codigo)
         {
@@ -46,6 +60,11 @@ namespace AtacadoApi.Controllers
             }
         }
 
+        /// <summary>
+        /// Cria um novo registro na tabela 
+        /// </summary>
+        /// <param name="poco"></param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult<TipoRebanhoPoco> Criar([FromBody] TipoRebanhoPoco poco)
         {
@@ -60,6 +79,12 @@ namespace AtacadoApi.Controllers
             }
         }
 
+
+        /// <summary>
+        /// Atualiza os dados da tabela 
+        /// </summary>
+        /// <param name="poco"></param>
+        /// <returns></returns>
         [HttpPut]
         public ActionResult<TipoRebanhoPoco> Atualizar([FromBody] TipoRebanhoPoco poco)
         {
