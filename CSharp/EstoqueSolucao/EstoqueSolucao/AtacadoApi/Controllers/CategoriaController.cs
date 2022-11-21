@@ -5,6 +5,7 @@ using Atacado.Poco.Estoque;
 using Atacado.Servico.Estoque;
 using Microsoft.IdentityModel.Tokens;
 using System.Diagnostics.CodeAnalysis;
+using Atacado.DB.EF.Database;
 
 namespace AtacadoApi.Controllers
 {
@@ -20,9 +21,9 @@ namespace AtacadoApi.Controllers
         /// <summary>
         /// 
         /// </summary>
-        public CategoriaController() : base()
+        public CategoriaController(ProjetoAcademiaContext contexto) : base()
         {
-            this.servico = new CategoriaServico();
+            this.servico = new CategoriaServico(contexto);
         }
 
         /// <summary>

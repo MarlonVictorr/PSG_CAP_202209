@@ -18,4 +18,6 @@
     <ProjectReference Include="..\Atacado.Servico\Atacado.Servico.csproj" />
   </ItemGroup>
 
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://json.schemastore.org/nodehawkrc.json" /></VisualStudio></ProjectExtensions>
+
 </Project>
