@@ -33,7 +33,7 @@ builder.Services.AddSwaggerGen(opcoes =>
     opcoes.IncludeXmlComments(filePath);
 });
 
-string str = builder.Configuration.GetConnectionString("Academia");
+string str = builder.Configuration.GetConnectionString("ClinicaDB");
 builder.Services.AddDbContext<ClinicaContext>(options => options.UseSqlServer(str));
 
 
