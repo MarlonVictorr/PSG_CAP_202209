@@ -146,14 +146,6 @@
             <param name="proid"></param>
             <returns></returns>
         </member>
-        <member name="M:ClinicaApi.Controllers.PacienteController.GetPorPacientePorProfissao(System.Int32,System.Int32)">
-            <summary>
-            Lista os pacientes pelo código de paciente e profissao
-            </summary>
-            <param name="pacid"></param>
-            <param name="proid"></param>
-            <returns></returns>
-        </member>
         <member name="M:ClinicaApi.Controllers.PacienteController.Post(Clinica.Poco.PacientePoco)">
             <summary>
             Cria um novo registro na tabela

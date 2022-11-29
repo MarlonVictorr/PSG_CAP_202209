@@ -83,26 +83,6 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Lista os pacientes pelo código de paciente e profissao
-        /// </summary>
-        /// <param name="pacid"></param>
-        /// <param name="proid"></param>
-        /// <returns></returns>
-        [HttpGet("PorPaciente/{pacid:int}/PorProfissao/{proid:int}")]
-        public ActionResult<List<PacientePoco>> GetPorPacientePorProfissao(int pacid, int proid)
-        {
-            try
-            {
-                List<PacientePoco> listPoco = this.servico.Consultar(pac => (pac.CodigoPaciente == pacid) && (pac.CodigoProfissao == proid)).ToList();
-                return Ok(listPoco);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.ToString());
-            }
-        }
-
-        /// <summary>
         /// Cria um novo registro na tabela
         /// </summary>
         /// <param name="poco"></param>
