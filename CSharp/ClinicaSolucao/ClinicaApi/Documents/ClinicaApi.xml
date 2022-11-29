@@ -113,6 +113,25 @@
             <param name="codigo"></param>
             <returns></returns>
         </member>
+        <member name="T:ClinicaApi.Controllers.ExameController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:ClinicaApi.Controllers.ExameController.#ctor(Clinica.Dominio.EF.ClinicaContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:ClinicaApi.Controllers.ExameController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Listar todos os registros da tabela.
+            </summary>
+            <param name="take"></param>
+            <param name="skip"></param>
+            <returns></returns>
+        </member>
         <member name="T:ClinicaApi.Controllers.PacienteController">
             <summary>
             

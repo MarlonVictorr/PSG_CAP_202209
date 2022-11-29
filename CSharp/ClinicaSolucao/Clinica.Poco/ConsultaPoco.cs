@@ -14,7 +14,7 @@ namespace Clinica.Poco
 
         public DateTime Data { get; set; }
 
-        public DateTime Hora { get; set; }
+        public TimeSpan Hora { get; set; }
 
         public DateTime DataHora { get; set; }
 

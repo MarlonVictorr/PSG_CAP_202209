@@ -8,7 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Clinica.Servico.Clinica
+namespace Clinica.Servico.Odonto
 {
     public class ConsultaServico : GenericService<Consulta,ConsultaPoco>
     {
