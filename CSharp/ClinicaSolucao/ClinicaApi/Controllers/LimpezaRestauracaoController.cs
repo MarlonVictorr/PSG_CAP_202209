@@ -7,12 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ClinicaApi.Controllers
 {
-    /// <summary>
-    /// 
-    /// </summary>
-    [Route("api/clinica/[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
-    public class ExameController : ControllerBase
+    public class LimpezaRestauracaoController : ControllerBase
     {
         private ProcedimentosServico servico;
 
@@ -20,7 +17,7 @@ namespace ClinicaApi.Controllers
         /// 
         /// </summary>
         /// <param name="context"></param>
-        public ExameController(ClinicaContext context) : base()
+        public LimpezaRestauracaoController(ClinicaContext context) : base()
         {
             this.servico = new ProcedimentosServico(context);
         }
@@ -38,7 +35,7 @@ namespace ClinicaApi.Controllers
             {
                 List<ServicoPoco> listPoco;
                 var predicado = PredicateBuilder.New<Clinica.Dominio.EF.Servico>(true);
-                if(take == null) //Opcional
+                if (take == null) //Opcional
                 {
                     if (skip != null)
                     {
@@ -46,8 +43,8 @@ namespace ClinicaApi.Controllers
                     }
                     else
                     {
-                        predicado = predicado.And(s => s.TipoServico == "EX");
-                        listPoco = this.servico.Vasculhar(take, skip, predicado);
+                        predicado = predicado.And(s => s.TipoServico == "LR");
+                        listPoco = this.servico.Consultar(predicado);
                         return Ok(listPoco);
                     }
                 }
@@ -59,13 +56,13 @@ namespace ClinicaApi.Controllers
                     }
                     else
                     {
-                        predicado = predicado.And(s => s.TipoServico == "EX");
+                        predicado = predicado.And(s => s.TipoServico == "LR");
                         listPoco = this.servico.Vasculhar(take, skip, predicado);
                         return Ok(listPoco);
                     }
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
@@ -81,7 +78,7 @@ namespace ClinicaApi.Controllers
         {
             try
             {
-                List<ServicoPoco> listPoco = this.servico.Consultar(s => (s.TipoServico == "EX") && (s.CodigoServico == codigo));
+                List<ServicoPoco> listPoco = this.servico.Consultar(s => (s.TipoServico == "LR") && (s.CodigoServico == codigo));
                 return Ok(listPoco);
             }
             catch (Exception ex)
@@ -103,7 +100,7 @@ namespace ClinicaApi.Controllers
                 ServicoPoco nova = this.servico.Inserir(poco);
                 return Ok(nova);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
@@ -122,7 +119,7 @@ namespace ClinicaApi.Controllers
                 ServicoPoco atPoco = this.servico.Alterar(poco);
                 return Ok(atPoco);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
@@ -141,7 +138,7 @@ namespace ClinicaApi.Controllers
                 ServicoPoco delPoco = this.servico.Excluir(codigo);
                 return Ok(delPoco);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return BadRequest(ex.ToString());
             }
