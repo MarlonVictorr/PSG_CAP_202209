@@ -18,6 +18,8 @@ namespace Clinica.Dominio.EF
 
         public DbSet<Servico> Servicos { get; set; } = null!;
 
+        public DbSet<TipoServico> tipoServicos { get; set; } = null!;
+
         public ClinicaContext() : base()
         {}
 

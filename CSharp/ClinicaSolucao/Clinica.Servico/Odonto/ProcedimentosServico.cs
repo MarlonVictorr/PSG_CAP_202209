@@ -75,17 +75,20 @@ namespace Clinica.Servico.Odonto
             return query.Select(ser =>
             new ServicoPoco()
             {
-                CodigoServico = ser.CodigoServico,
-                Descricao = ser.Descricao,
-                Preco = ser.Preco,
-                TipoServico = ser.TipoServico,
-                Situacao = ser.Situacao,
-                DataInclusao = ser.DataInclusao,
-                DataAlteracao = ser.DataAlteracao,
-                MedidaPreventiva = ser.MedidaPreventiva,
-                TipoExame = ser.TipoExame,
-                DenteTratado = ser.DenteTratado,
-                MaterialUsado = ser.MaterialUsado
+               CodigoServico = ser.CodigoServico,
+               Descricao = ser.Descricao,  
+               Preco= ser.Preco,
+               MaterialUsado= ser.MaterialUsado,
+               DenteTratado= ser.DenteTratado,
+               MedidaPreventiva= ser.MedidaPreventiva,
+               TipoExame= ser.TipoExame,
+               TipoServico= ser.TipoServico,
+               Situacao= ser.Situacao,
+               DataInclusao= ser.DataInclusao,
+               DataAlteracao= ser.DataAlteracao,
+               DenteExtraido= ser.DenteExtraido,
+               DenteCanalPar = ser.DenteCanalPar,
+               CodigoTipoServico= ser.CodigoTipoServico
             }
             )
             .ToList();

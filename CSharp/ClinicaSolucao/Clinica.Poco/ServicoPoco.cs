@@ -32,6 +32,12 @@ namespace Clinica.Poco
         
         public DateTime? DataAlteracao { get; set; }
 
+        public int? DenteExtraido { get; set; }
+
+        public int? DenteCanalPar { get; set; }
+
+        public int? CodigoTipoServico { get; set; }
+
         public ServicoPoco()
         { }
     }
