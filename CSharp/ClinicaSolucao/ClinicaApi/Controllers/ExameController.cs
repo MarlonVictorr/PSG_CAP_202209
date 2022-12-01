@@ -72,7 +72,7 @@ namespace ClinicaApi.Controllers
         }
 
         /// <summary>
-        /// Lista o serviço de acordo com o código informado
+        /// Lista o exame de acordo com o predicado
         /// </summary>
         /// <param name="codigo"></param>
         /// <returns></returns>
