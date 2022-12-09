@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViajeFacil.Dominio.EF", "ViajeFacil.Dominio.EF\ViajeFacil.Dominio.EF.csproj", "{2C89DD4A-8E18-44B3-902E-9762EFCB8E55}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViajeFacil.Mapping", "ViajeFacil.Mapping\ViajeFacil.Mapping.csproj", "{364EAD3C-6CF6-4FDC-B4EC-DC7A16531107}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViajeFacil.Poco", "ViajeFacil.Poco\ViajeFacil.Poco.csproj", "{4E90ABEF-7B1F-48A1-84C5-B02EECCACFA7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ViajeFacil.Repository", "ViajeFacil.Repositorio\ViajeFacil.Repository.csproj", "{00760C56-2876-4D88-AD4B-23AF956EE7AA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViajeFacil.Service", "ViajeFacil.Service\ViajeFacil.Service.csproj", "{9D2D836F-02D1-4D9B-8317-08E9993BF7C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViajeFacilApi", "ViajeFacilApi\ViajeFacilApi.csproj", "{FB7EFBE8-1D2D-460A-AF71-A0942951CA25}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2C89DD4A-8E18-44B3-902E-9762EFCB8E55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C89DD4A-8E18-44B3-902E-9762EFCB8E55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C89DD4A-8E18-44B3-902E-9762EFCB8E55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C89DD4A-8E18-44B3-902E-9762EFCB8E55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{364EAD3C-6CF6-4FDC-B4EC-DC7A16531107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{364EAD3C-6CF6-4FDC-B4EC-DC7A16531107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{364EAD3C-6CF6-4FDC-B4EC-DC7A16531107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{364EAD3C-6CF6-4FDC-B4EC-DC7A16531107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E90ABEF-7B1F-48A1-84C5-B02EECCACFA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E90ABEF-7B1F-48A1-84C5-B02EECCACFA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E90ABEF-7B1F-48A1-84C5-B02EECCACFA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E90ABEF-7B1F-48A1-84C5-B02EECCACFA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00760C56-2876-4D88-AD4B-23AF956EE7AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00760C56-2876-4D88-AD4B-23AF956EE7AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00760C56-2876-4D88-AD4B-23AF956EE7AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00760C56-2876-4D88-AD4B-23AF956EE7AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D2D836F-02D1-4D9B-8317-08E9993BF7C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D2D836F-02D1-4D9B-8317-08E9993BF7C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D2D836F-02D1-4D9B-8317-08E9993BF7C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D2D836F-02D1-4D9B-8317-08E9993BF7C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB7EFBE8-1D2D-460A-AF71-A0942951CA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB7EFBE8-1D2D-460A-AF71-A0942951CA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB7EFBE8-1D2D-460A-AF71-A0942951CA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB7EFBE8-1D2D-460A-AF71-A0942951CA25}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {17A62DBC-E9D2-446D-AAF8-3FE6C2546603}
+	EndGlobalSection
+EndGlobal
