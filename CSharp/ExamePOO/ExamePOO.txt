@@ -1,0 +1,25 @@
+1) V - A descrição trata-se corretamente do conceito do pilar de herança. 
+
+2) V - O código não utiliza o pilar polimorfismo pois a classe filha não contém nada da classe pai. 
+
+3) V - O código utiliza corretamente os pilares de herança e polimorfismo pois as classes filhas implementam o metodo da classe pai pelo motivo da classe pai ser abstrata.
+
+4) V - Classes static não podem ser instanciadas.
+
+5) V
+Justificativa : 
+A - Falsa, métodos e atributos são estruturas de classes não conceitos.
+B - Falsa, pois polimorfismo existe relação mas com funcionalidades distintas.
+C - Falsa, o conceito de classe esta invertido com a de objeto.
+D - Falsa, a afirmação trata-se do conceito de classe não objeto
+E - Falsa, uma propriedade e considerado como somente leitura se a propriedade tem apenas get. 
+
+6) V - A melhoria apresenta boas práticas na utilização do pilar herança já que a mesma implementa no construtor da classe BasePessoaAtributos o parâmetro da classe pai,tornando assim sintaticamente e semanticamente correto.
+
+7) V - As classes não possuem propriedades,os construtores não implementam os atributos de sua própria classe e tambem não foi atibuido valor para os atributos nos construtores.
+
+8)V - Os construtores das classes não implementam os atributos da própria classe.
+
+9)F - A classe bilhete não possui propriedade sendo assim inviavel fazer update.
+
+10) F - O metodo edit precisa do corpo e como parametro esta sendo passado obj e na atribuição chave
