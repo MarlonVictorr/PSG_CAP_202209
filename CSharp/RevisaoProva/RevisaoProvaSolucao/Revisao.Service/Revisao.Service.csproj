@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Revisao.Dominio.EF\Revisao.Dominio.EF.csproj" />
+    <ProjectReference Include="..\Revisao.Mapping\Revisao.Mapping.csproj" />
+    <ProjectReference Include="..\Revisao.Poco\Revisao.Poco.csproj" />
+    <ProjectReference Include="..\Revisao.Repository\Revisao.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

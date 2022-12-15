@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RevisaoApi</name>
+    </assembly>
+    <members>
+        <member name="T:RevisaoApi.Controllers.BilheteController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RevisaoApi.Controllers.BilheteController.#ctor(Revisao.Dominio.EF.RevisaoContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:RevisaoApi.Controllers.BilheteController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Listar todos os registros da tabela.
+            </summary>
+            <param name="take"></param>
+            <param name="skip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.BilheteController.GetPorId(System.Int32)">
+            <summary>
+            Lista o bilhete de acordo com o código informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.BilheteController.Post(Revisao.Poco.BilhetePoco)">
+            <summary>
+            Cria um novo registro na tabela
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.BilheteController.Put(Revisao.Poco.BilhetePoco)">
+            <summary>
+            Atualiza os dados da tabela 
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.BilheteController.DeletePorId(System.Int32)">
+            <summary>
+            Apaga um registro por codigo informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RevisaoApi.Controllers.FuncionarioController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RevisaoApi.Controllers.FuncionarioController.#ctor(Revisao.Dominio.EF.RevisaoContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:RevisaoApi.Controllers.FuncionarioController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Listar todos os registros da tabela.
+            </summary>
+            <param name="take"></param>
+            <param name="skip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.FuncionarioController.GetPorId(System.Int32)">
+            <summary>
+            Lista o funcionario de acordo com o código informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.FuncionarioController.GetPorNome(System.String)">
+            <summary>
+            Lista o funcionario de acordo com o nome informado
+            </summary>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.FuncionarioController.Post(Revisao.Poco.FuncionarioPoco)">
+            <summary>
+            Cria um novo registro na tabela
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.FuncionarioController.Put(Revisao.Poco.FuncionarioPoco)">
+            <summary>
+            Atualiza os dados da tabela 
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.FuncionarioController.DeletePorId(System.Int32)">
+            <summary>
+            Apaga um registro por codigo informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RevisaoApi.Controllers.PassageiroController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RevisaoApi.Controllers.PassageiroController.#ctor(Revisao.Dominio.EF.RevisaoContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:RevisaoApi.Controllers.PassageiroController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Listar todos os registros da tabela.
+            </summary>
+            <param name="take"></param>
+            <param name="skip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.PassageiroController.GetPorId(System.Int32)">
+            <summary>
+            Lista o passageiro de acordo com o código informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.PassageiroController.GetPorNome(System.String)">
+            <summary>
+            Lista o passageiro de acordo com o nome informado
+            </summary>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.PassageiroController.Post(Revisao.Poco.PassageiroPoco)">
+            <summary>
+            Cria um novo registro na tabela
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.PassageiroController.Put(Revisao.Poco.PassageiroPoco)">
+            <summary>
+            Atualiza os dados da tabela 
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RevisaoApi.Controllers.PassageiroController.DeletePorId(System.Int32)">
+            <summary>
+            Apaga um registro por codigo informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
