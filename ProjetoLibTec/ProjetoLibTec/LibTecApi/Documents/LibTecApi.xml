@@ -1,0 +1,170 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LibTecApi</name>
+    </assembly>
+    <members>
+        <member name="T:LibTecApi.Controllers.AutorPorItemController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibTecApi.Controllers.AutorPorItemController.#ctor(LibTec.Domain.EF.LibTecContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:LibTecApi.Controllers.AutorPorItemController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros da tabela.
+            </summary>
+            <param name="take"></param>
+            <param name="skip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.AutorPorItemController.GetPorId(System.Int32)">
+            <summary>
+            Lista o item de acordo com o código informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.AutorPorItemController.GetPorAutor(System.Int32)">
+            <summary>
+            Lista o item de acordo com o código informado do autor
+            </summary>
+            <param name="autcodigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.AutorPorItemController.Post(LibTec.Poco.AutorItemPoco)">
+            <summary>
+            Cria um novo registro na tabela
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.AutorPorItemController.Put(LibTec.Poco.AutorItemPoco)">
+            <summary>
+            Atualiza os dados da tabela 
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.AutorPorItemController.DeletePorId(System.Int32)">
+            <summary>
+            Apaga um registro por código informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibTecApi.Controllers.ItemController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibTecApi.Controllers.ItemController.#ctor(LibTec.Domain.EF.LibTecContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:LibTecApi.Controllers.ItemController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros da tabela.
+            </summary>
+            <param name="take"></param>
+            <param name="skip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.ItemController.GetPorId(System.Int32)">
+            <summary>
+            Lista o item de acordo com o código informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.ItemController.GetPorTipoItem(System.Int32)">
+            <summary>
+            Lista o item de acordo com o código informado do tipo
+            </summary>
+            <param name="autcodigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.ItemController.Post(LibTec.Poco.ItemPoco)">
+            <summary>
+            Cria um novo registro na tabela
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.ItemController.Put(LibTec.Poco.ItemPoco)">
+            <summary>
+            Atualiza os dados da tabela 
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.ItemController.DeletePorId(System.Int32)">
+            <summary>
+            Apaga um registro por código informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="T:LibTecApi.Controllers.TipoItemController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:LibTecApi.Controllers.TipoItemController.#ctor(LibTec.Domain.EF.LibTecContext)">
+            <summary>
+            
+            </summary>
+            <param name="context"></param>
+        </member>
+        <member name="M:LibTecApi.Controllers.TipoItemController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros da tabela.
+            </summary>
+            <param name="take"></param>
+            <param name="skip"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.TipoItemController.GetPorId(System.Int32)">
+            <summary>
+            Lista o tipo de item de acordo com o código informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.TipoItemController.GetPorNome(System.String)">
+            <summary>
+            Lista o tipo de item de acordo com o nome 
+            </summary>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.TipoItemController.Post(LibTec.Poco.TipoItemPoco)">
+            <summary>
+            Cria um novo registro na tabela
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.TipoItemController.Put(LibTec.Poco.TipoItemPoco)">
+            <summary>
+            Atualiza os dados da tabela 
+            </summary>
+            <param name="poco"></param>
+            <returns></returns>
+        </member>
+        <member name="M:LibTecApi.Controllers.TipoItemController.DeletePorId(System.Int32)">
+            <summary>
+            Apaga um registro por código informado
+            </summary>
+            <param name="codigo"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

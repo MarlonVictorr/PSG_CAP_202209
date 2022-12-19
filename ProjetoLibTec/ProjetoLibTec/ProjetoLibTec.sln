@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibTec.Domain.EF", "LibTec.Domain.EF\LibTec.Domain.EF.csproj", "{28BCB704-0326-4121-9AA6-3EF0C24E5841}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibTec.Poco", "LibTec.Poco\LibTec.Poco.csproj", "{2B78AD0C-8E73-42BE-9B65-B432FB87E58A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibTec.Repository", "LibTec.Repository\LibTec.Repository.csproj", "{98A41A34-889D-4AA4-B55B-D1464FEBA17C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibTec.Mapping", "LibTec.Mapping\LibTec.Mapping.csproj", "{1185AECF-6710-496C-A833-E8DD8F626A71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibTec.Service", "LibTec.Service\LibTec.Service.csproj", "{97BB5E6F-332A-4FA1-811C-AFAE6A287E4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibTecApi", "LibTecApi\LibTecApi.csproj", "{B8B781DF-99DB-4116-9E0C-E3AD2A7AA108}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28BCB704-0326-4121-9AA6-3EF0C24E5841}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28BCB704-0326-4121-9AA6-3EF0C24E5841}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28BCB704-0326-4121-9AA6-3EF0C24E5841}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28BCB704-0326-4121-9AA6-3EF0C24E5841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B78AD0C-8E73-42BE-9B65-B432FB87E58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B78AD0C-8E73-42BE-9B65-B432FB87E58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B78AD0C-8E73-42BE-9B65-B432FB87E58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B78AD0C-8E73-42BE-9B65-B432FB87E58A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A41A34-889D-4AA4-B55B-D1464FEBA17C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A41A34-889D-4AA4-B55B-D1464FEBA17C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A41A34-889D-4AA4-B55B-D1464FEBA17C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A41A34-889D-4AA4-B55B-D1464FEBA17C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1185AECF-6710-496C-A833-E8DD8F626A71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1185AECF-6710-496C-A833-E8DD8F626A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1185AECF-6710-496C-A833-E8DD8F626A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1185AECF-6710-496C-A833-E8DD8F626A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97BB5E6F-332A-4FA1-811C-AFAE6A287E4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97BB5E6F-332A-4FA1-811C-AFAE6A287E4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97BB5E6F-332A-4FA1-811C-AFAE6A287E4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97BB5E6F-332A-4FA1-811C-AFAE6A287E4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8B781DF-99DB-4116-9E0C-E3AD2A7AA108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B781DF-99DB-4116-9E0C-E3AD2A7AA108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B781DF-99DB-4116-9E0C-E3AD2A7AA108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B781DF-99DB-4116-9E0C-E3AD2A7AA108}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {965B5DEA-DB0C-4636-9503-C86699E71B72}
+	EndGlobalSection
+EndGlobal
