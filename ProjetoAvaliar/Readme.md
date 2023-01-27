@@ -4,8 +4,6 @@ Projeto Avaliar desenvolvido com Api em C# e FrontEnd com Html, Javascript e Boo
 
 ## 🛠️ Construído com
 
-Mencione as ferramentas que você usou para criar seu projeto
-
 * NET - NET
 * Jquery - Framework Front-end
 * BootStrap - Framework Front-end
