@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pagina Index</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    .row.content {height: 450px}
+    
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    footer {
+      background-color: #f1f1f1;
+      color: white;
+      padding: 15px;
+    }
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" ></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="https://github.com/MarlonVictorr/PSG_CAP_202209">Projects</a></li>
+        <li><a href="https://accounts.google.com/AccountChooser/identifier?service=mail&continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&flowName=GlifWebSignIn&flowEntry=AccountChooser">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <p><a href="../Paginas/Usuario/list.html"><button id="btnUsuario" name="btnUsuario" class="btn-danger">Usuario</button></a></p>
+      <p><a href="../Paginas/TipoUsuario/list.html"><button id="btnTipoUsuario" name="btnTipoUsuario" class="btn-danger">Tipo Usuario</button></a></p>
+    </div>
+    <div class="col-sm-8 text-left"> 
+      <h1>Projeto Avaliar</h1>
+      <p>Projeto Desenvolvido pelo Desenvolvedor Marlon Victor</p>
+      <p>Turma de capacitação da PSG-202209</p>
+      <hr>
+      <div class="row">
+        <div class="col-sm-5">
+            <p></p>
+            <a href="https://www.instagram.com/mvic.tor/"><img src="../../img/icon instagram.png" alt="imagem" height="40" width="40"></a>
+            <a href="https://github.com/MarlonVictorr"><img src="../../img/icon git hub.png" alt="imagem" height="50" width="50"></a>
+        </div>    
+      </div> 
+    </div>
+  </div>
+</div>
+
+  <!--- Footer --->
+  <footer>
+    <div class="jumbotron jumbotron-fluid bg-secondary p-4 mt-5 mb-0">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 ">
+            <div class="card bg-secondary border-0">
+              <div class="card-body text-light text-center">
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 ">
+            <div class="card bg-secondary border-0">
+              <div class="card-body text-center">
+                <a class="text-light d-block lead" style="margin-left: -20px" ><i class="fa mr-2"></i>(67) 99186-0481</a>
+                <a class="text-light d-block lead"><i class="fa fa-envelope mr-2"></i>marlonvitor052@gmail.com</a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+            <div class="card bg-secondary border-0">
+              <div class="card-body text-center">
+
+                <a class="text-light" href="#"><i class="fa fa-facebook-square fa-fw fa-2x"></i></a>
+  
+                <a class="text-light" href="#"><i class="fa fa-twitter-square fa-fw fa-2x"></i></a>
+  
+                <a class="text-light" href="#"><i class="fa fa-instagram fa-fw fa-2x"></i></a>
+  
+                <a class="text-light" href="#"><i class="fa fa-linkedin fa-fw fa-2x"></i></a>
+  
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

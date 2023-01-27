@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AvaliarApi</name>
+    </assembly>
+    <members>
+        <member name="M:AvaliarApi.Controllers.TipoUsuarioController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros de TipoUsuario por Paginação.
+            </summary>
+            <param name="take"> Onde inicia os resultados da pesquisa. </param>
+            <param name="skip"> Quantos registros serão retornados. </param>
+            <returns> Todos os registros. </returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.TipoUsuarioController.GetById(System.Int32)">
+            <summary>
+             Lista os registro usando a chave de TipoUsuario
+            </summary>
+            <param name="chave"> Chave de pesquisa. </param>
+            <returns> Registro localizado. </returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.TipoUsuarioController.Post(Avaliar.Poco.TipoUsuarioPoco)">
+            <summary>
+            Inclui um novo dado na tabela TipoUsuario.
+            </summary>
+            <param name="poco"> Dados que será incluido. </param>
+            <returns> Dados incluido. </returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.TipoUsuarioController.Put(Avaliar.Poco.TipoUsuarioPoco)">
+            <summary>
+            Altera um dado existente na tabela TipoUsuario.
+            </summary>
+            <param name="poco"> Altera o dado selecionado. </param>
+            <returns> Altera o dado selecionado. </returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.TipoUsuarioController.DeleteById(System.Int32)">
+            <summary>
+            Exclui um registro existente em TipoUsuario, utilizando um id.
+            </summary>
+            <param name="chave"> Chave para localização. </param>
+            <returns> Dado excluido por Id. </returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.TipoUsuarioController.GetAllEnvelope(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retorna todos os registros de modo envelopado para o arquivo JSON
+            </summary>
+            <param name="limite"></param>
+            <param name="salto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.TipoUsuarioController.GetByIdEnvelope(System.Int32)">
+            <summary>
+            Retorna todos os registros de modo envelopado para o arquivo JSON filtrados por Codigo de Usuario 
+            </summary>
+            <param name="chave"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.UsuarioController.GetAll(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Lista todos os registros de Usuario por Paginação.
+            </summary>
+            <param name="take"> Onde inicia os resultados da pesquisa. </param>
+            <param name="skip"> Quantos registros serão retornados. </param>
+            <returns> Todos os registros. </returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.UsuarioController.GetById(System.Int32)">
+            <summary>
+             Lista os registro usando a chave de Usuario.
+            </summary>
+            <param name="chave"> Chave de pesquisa. </param>
+            <returns> Registro localizado. </returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.UsuarioController.Post(Avaliar.Poco.UsuarioPoco)">
+            <summary>
+            Inclui um novo dado na tabela Usuario.
+            </summary>
+            <param name="poco"> Dados que será incluido. </param>
+            <returns> Dados incluido. </returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.UsuarioController.Put(Avaliar.Poco.UsuarioPoco)">
+            <summary>
+            Altera um dado existente na tabela Usuario.
+            </summary>
+            <param name="poco"> Altera o dado selecionado. </param>
+            <returns> Altera o dado selecionado. </returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.UsuarioController.DeleteById(System.Int32)">
+            <summary>
+            Exclui um registro existente em Usuario, utilizando um id.
+            </summary>
+            <param name="chave"> Chave para localização. </param>
+            <returns> Dado excluido por Id. </returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.UsuarioController.GetAllEnvelope(System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retorna todos os registros de modo envelopado para o arquivo JSON
+            </summary>
+            <param name="limite"></param>
+            <param name="salto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.UsuarioController.GetPorTipoUsuarioEnvelope(System.Int32,System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Retorna todos os registros de modo envelopado para o arquivo JSON filtrados por TipoUsuario
+            </summary>
+            <param name="tipcod"></param>
+            <param name="limite"></param>
+            <param name="salto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AvaliarApi.Controllers.UsuarioController.GetByIdEnvelope(System.Int32)">
+            <summary>
+            Retorna todos os registros de modo envelopado para o arquivo JSON filtrados por Codigo de Usuario 
+            </summary>
+            <param name="chave"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

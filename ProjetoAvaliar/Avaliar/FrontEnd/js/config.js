@@ -1,0 +1,1 @@
+var servidor = "https://localhost:7106/api/avaliacao";
